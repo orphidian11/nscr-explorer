@@ -1,0 +1,60 @@
+{
+  "id": "bicutan-placeholder",
+  "name": "Bicutan Station",
+  "description": "Placeholder massing for the NSCR Bicutan elevated station. Positions are primitive centers in meters; +Y is up; the track axis runs along Z. Replace primitives (or reference converted CAD meshes via { \"kind\": \"gltf\", \"url\": ... }) to swap in real geometry with no code changes.",
+  "source": "placeholder",
+  "units": "meters",
+  "upAxis": "y",
+  "trackAxis": "z",
+  "layers": [
+    {
+      "id": "platform",
+      "label": "Platform",
+      "visible": true,
+      "primitives": [
+        { "kind": "box", "name": "Platform slab", "size": [10, 0.5, 120], "position": [0, 8.05, 0], "color": "#ccd1d9" },
+        { "kind": "box", "name": "Tactile warning strip (east)", "size": [1, 0.06, 118], "position": [3.9, 8.33, 0], "color": "#d9b529" },
+        { "kind": "box", "name": "Tactile warning strip (west)", "size": [1, 0.06, 118], "position": [-3.9, 8.33, 0], "color": "#d9b529" }
+      ]
+    },
+    {
+      "id": "concourse",
+      "label": "Concourse",
+      "visible": true,
+      "primitives": [
+        { "kind": "box", "name": "Concourse hall", "size": [25, 4, 60], "position": [0, 4, 0], "color": "#a8bccf" }
+      ]
+    },
+    {
+      "id": "cores",
+      "label": "Stair cores",
+      "visible": true,
+      "primitives": [
+        { "kind": "box", "name": "Stair core (north)", "size": [5, 8.3, 7], "position": [7.4, 4.15, 52], "color": "#8b98a8" },
+        { "kind": "box", "name": "Stair core (south)", "size": [5, 8.3, 7], "position": [-7.4, 4.15, -52], "color": "#8b98a8" }
+      ]
+    },
+    {
+      "id": "piers",
+      "label": "Viaduct piers",
+      "visible": true,
+      "primitives": [
+        { "kind": "cylinder", "name": "Pier 1", "radiusTop": 1, "radiusBottom": 1.25, "height": 7.8, "radialSegments": 24, "position": [0, 3.9, -75], "color": "#7d8794" },
+        { "kind": "cylinder", "name": "Pier 2", "radiusTop": 1, "radiusBottom": 1.25, "height": 7.8, "radialSegments": 24, "position": [0, 3.9, -45], "color": "#7d8794" },
+        { "kind": "cylinder", "name": "Pier 3", "radiusTop": 1, "radiusBottom": 1.25, "height": 7.8, "radialSegments": 24, "position": [0, 3.9, -15], "color": "#7d8794" },
+        { "kind": "cylinder", "name": "Pier 4", "radiusTop": 1, "radiusBottom": 1.25, "height": 7.8, "radialSegments": 24, "position": [0, 3.9, 15], "color": "#7d8794" },
+        { "kind": "cylinder", "name": "Pier 5", "radiusTop": 1, "radiusBottom": 1.25, "height": 7.8, "radialSegments": 24, "position": [0, 3.9, 45], "color": "#7d8794" },
+        { "kind": "cylinder", "name": "Pier 6", "radiusTop": 1, "radiusBottom": 1.25, "height": 7.8, "radialSegments": 24, "position": [0, 3.9, 75], "color": "#7d8794" }
+      ]
+    },
+    {
+      "id": "tracks",
+      "label": "Tracks",
+      "visible": true,
+      "primitives": [
+        { "kind": "box", "name": "Track (northbound)", "size": [0.75, 0.18, 200], "position": [6.75, 8.45, 0], "color": "#3f454e" },
+        { "kind": "box", "name": "Track (southbound)", "size": [0.75, 0.18, 200], "position": [-6.75, 8.45, 0], "color": "#3f454e" }
+      ]
+    }
+  ]
+}

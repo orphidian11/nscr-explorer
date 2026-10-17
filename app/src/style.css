@@ -1,0 +1,134 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #0e1116;
+  overflow: hidden;
+}
+
+#app {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+#app canvas {
+  display: block;
+}
+
+.panel {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  width: 252px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: rgba(17, 22, 29, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  color: #dfe5ee;
+}
+
+.panel-title {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8fb7e8;
+}
+
+.station-name {
+  margin: 0 0 14px;
+  font-size: 19px;
+  font-weight: 650;
+  color: #ffffff;
+}
+
+.panel-label {
+  margin-bottom: 6px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #8a97ab;
+}
+
+.layer-list {
+  margin-bottom: 14px;
+}
+
+.layer-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+  font-size: 13px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.layer-row input {
+  accent-color: #4c9aff;
+  width: 14px;
+  height: 14px;
+}
+
+.btn-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.preset-btn {
+  flex: 1;
+  padding: 6px 0;
+  font-size: 12px;
+  color: #dfe5ee;
+  background: #232b37;
+  border: 1px solid #364152;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.preset-btn:hover {
+  background: #2c3745;
+}
+
+.preset-btn.active {
+  background: #2f5fa8;
+  border-color: #4c7fd0;
+  color: #ffffff;
+}
+
+.panel-status {
+  min-height: 16px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #9fb0c3;
+}
+
+.panel-status.error {
+  color: #ff8d7a;
+}
+
+.panel-hint {
+  font-size: 11px;
+  color: #6d7a8d;
+}

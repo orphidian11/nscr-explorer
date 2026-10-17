@@ -1,0 +1,21 @@
+# Source drawings (9+ GB) — never commit
+NSCR_drawings/
+
+# Pipeline working data (large binaries / converted outputs)
+pipeline/oda_bin/
+pipeline/dwg_stage*/
+pipeline/dxf/
+pipeline/dxf_out/
+pipeline/wall_segments.json
+*.dwg
+*.DXF
+*.dxf
+
+# Node
+app/node_modules/
+app/dist/
+
+# OS
+Thumbs.db
+.DS_Store
+pipeline/oda/
