@@ -51,13 +51,47 @@ slab = {"kind":"box",
         "pos":[round((pe[0]+pe[2])/2 - E0,1), 11.70, round(-((pe[1]+pe[3])/2 - N0),1)],
         "meta":{"src":"X_Bic_Sta_Platform A-SLAB bbox","ffl":11.90}}
 
-# Tracks: along the long (eastings/x) axis, top of rail +10.80 (from Section dims)
-L_along = pe[2]-pe[0]
+# --- NSCR main-alignment loading (viaduct.json, X_DD_NSRP_Main_Alignment) ---
+# 201 sampled [e,n] pts every 10 m, +/-1000 m along the alignment through Bicutan.
+# Needed before the tracks: the station long axis (and tracks) runs PARALLEL to
+# the alignment (~63 deg in the local XZ frame), not along local x.
+VIA = json.load(open(r"E:\NSCR\pipeline\viaduct.json"))
+al_pts = [(p[0] - E0, -(p[1] - N0)) for p in VIA["alignment"]["points"]]  # local x,z
+
+# Closest-approach point = local s=0; near-station tangent defines "along".
+d0 = min(range(len(al_pts)), key=lambda i: math.hypot(*al_pts[i]))
+_j = min(d0 + 1, len(al_pts) - 1)
+tux, tuz = al_pts[_j][0] - al_pts[d0][0], al_pts[_j][1] - al_pts[d0][1]
+tl = math.hypot(tux, tuz); tux, tuz = tux / tl, tuz / tl
+
+# Station extent along the alignment: project every wall-segment endpoint
+# (bbox corners would overstate it for the rotated footprint).
+def lerp_pt(p1, p2, t):
+    return (p1[0] + (p2[0] - p1[0]) * t, p1[1] + (p2[1] - p1[1]) * t)
+
+def heading_rotY(dx, dz):
+    return -math.atan2(dz, dx)  # three.js rotY aligning box +x with (dx,dz)
+
+_s_all = [x * tux + z * tuz for key in ("gf", "cc", "pl") for seg in SEGS[key]
+          for (x, z) in ((e - E0, -(n - N0)) for (e, n) in seg)]
+S_LO, S_HI = min(_s_all), max(_s_all)
+
+L_along = pe[2] - pe[0]  # platform bbox E-extent (stairs regularisation + reference)
+
+# Tracks: along the alignment axis through the station centre, top of rail +10.80
+# (from Section dims). 8.8 m track spacing per section DIMS (X_Bic_Sta_Section.dxf)
+# -> +/-4.4 m perpendicular to the centreline. Length spans the station footprint
+# along the alignment. (Earlier renders had tracks along local x - perpendicular
+# to the real alignment; now oriented along the alignment tangent.)
+TRACK_OFF = 4.4       # track centreline offset from alignment (8.8 m spacing)
+alT = S_HI - S_LO
+alC = (S_LO + S_HI) / 2
 tracks = []
-for off in (-6.75, 6.75):
-    tracks.append({"kind":"box","size":[round(L_along+40,1), 0.3, 1.6],
-                   "pos":[0, 10.65, round(off,2)],
-                   "meta":{"src":"typical double track, 6.75 m offset (DFR 8.7 m spacing), TOR +10.80"}})
+for off in (-TRACK_OFF, TRACK_OFF):
+    tracks.append({"kind": "box", "size": [round(alT + 2, 1), 0.3, 1.6],
+                   "pos": [round(tux * alC - tuz * off, 2), 10.65, round(tuz * alC + tux * off, 2)],
+                   "rotY": round(heading_rotY(tux, tuz), 4),
+                   "meta": {"src": "typical double track along NSCR alignment, 8.8 m spacing per section DIMS (+/-4.4 m), TOR +10.80"}})
 
 # --- Real structural columns (X_BIC-ST-FOUNDATION PLAN via columns.json) ---
 # 2.1 m = real column pad width; 5.4 / 6.8 m sizes are PILE-CAP pad sizes,
@@ -119,6 +153,71 @@ for z in (-30, 30):
                        "pos":[round(-L_along/2+10 + lvl*8,1), round((by+ty)/2,2), z],
                        "meta":{"src":"regularized stair core (A-STAIRS clusters seen in GF/Platform plans)"}})
 
+# --- NSCR main-alignment viaduct (reuses al_pts/tangent/extent loaded above) ---
+# Per-track U-girders at +/-4.4 m (8.8 m spacing, section DIMS), simplified as
+# 3 boxes per segment (base slab + 2 webs); piers every 40 m (CAD pier markers),
+# twin 0.5 m columns + cap beam. Deck segments are trimmed to abut the station
+# footprint ends (projected onto the near-station alignment tangent) - no gap/overlap.
+DECK_W = 5.14         # U-girder outer width per track (section DIMS)
+WEB_T = 0.3           # web thickness (simplification)
+BASE_T = 0.3          # base slab thickness
+WEB_H = 1.2           # web height above base slab
+BASE_Y = 10.6         # top of base slab = rail base level; rails at +10.80
+
+viaduct_deck = []   # U-girder boxes (base + webs); pier caps appended here too
+viaduct_piers = []  # 0.5 m columns (cylinders)
+for i in range(len(al_pts) - 1):
+    p1, p2 = al_pts[i], al_pts[i + 1]
+    s1, s2 = p1[0] * tux + p1[1] * tuz, p2[0] * tux + p2[1] * tuz
+    lo, hi = min(s1, s2), max(s1, s2)
+    # Clip the 10-m segment against the station interval; emit the outside parts.
+    spans = []
+    if lo < S_LO: spans.append((lo, min(hi, S_LO)))
+    if hi > S_HI: spans.append((max(lo, S_HI), hi))
+    if not spans:
+        continue
+    L = math.dist(p1, p2)
+    dx, dz = (p2[0] - p1[0]) / L, (p2[1] - p1[1]) / L
+    rot = heading_rotY(dx, dz)
+    perp = (dz, -dx)  # across-track unit (x,z)
+    for (sa, sb) in spans:
+        if sb - sa < 1.0:
+            continue
+        q1 = lerp_pt(p1, p2, (sa - s1) / (s2 - s1))
+        q2 = lerp_pt(p1, p2, (sb - s1) / (s2 - s1))
+        seg_l = math.dist(q1, q2)
+        mx, mz = (q1[0] + q2[0]) / 2, (q1[1] + q2[1]) / 2
+        for off in (-TRACK_OFF, TRACK_OFF):
+            cx, cz = mx + perp[0] * off, mz + perp[1] * off
+            viaduct_deck.append({"kind": "box", "size": [round(seg_l + 0.1, 2), BASE_T, DECK_W],
+                                 "pos": [round(cx, 2), BASE_Y - BASE_T / 2, round(cz, 2)], "rotY": round(rot, 4),
+                                 "meta": {"src": "viaduct.json U-girder base slab (simplified)"}})
+            for w in (-1, 1):
+                wx, wz = cx + perp[0] * w * (DECK_W / 2 - WEB_T / 2), cz + perp[1] * w * (DECK_W / 2 - WEB_T / 2)
+                viaduct_deck.append({"kind": "box", "size": [round(seg_l + 0.1, 2), WEB_H, WEB_T],
+                                     "pos": [round(wx, 2), BASE_Y + WEB_H / 2, round(wz, 2)], "rotY": round(rot, 4),
+                                     "meta": {"src": "viaduct.json U-girder web (simplified)"}})
+
+# Piers every 40 m along the alignment (every 4th 10-m sample = CAD pier spacing),
+# skipped inside the station box. Twin 0.5 m columns ground(+1.0)->+10.0 plus a
+# cap beam (5.6 across x 0.8 x 2.5 along) at +10.2, abutting the deck soffit.
+for i in range(0, len(al_pts), 4):
+    p = al_pts[i]
+    s = p[0] * tux + p[1] * tuz
+    if S_LO <= s <= S_HI:
+        continue
+    q2 = al_pts[min(i + 1, len(al_pts) - 1)]
+    rot = heading_rotY(q2[0] - p[0], q2[1] - p[1])
+    L = math.dist(p, q2) or 1.0
+    perp = ((q2[1] - p[1]) / L, -(q2[0] - p[0]) / L)
+    for off in (-1.5, 1.5):
+        viaduct_piers.append({"kind": "cylinder", "radius": 0.5, "height": 9.0,
+                              "pos": [round(p[0] + perp[0] * off, 2), 5.5, round(p[1] + perp[1] * off, 2)],
+                              "meta": {"src": "viaduct.json twin pier column, 40 m spacing (CAD pier markers)"}})
+    viaduct_deck.append({"kind": "box", "size": [2.5, 0.8, 5.6],
+                         "pos": [round(p[0], 2), 10.2, round(p[1], 2)], "rotY": round(rot, 4),
+                         "meta": {"src": "viaduct.json pier cap beam (rendered with deck layer; schema keeps piers cylinders-only)"}})
+
 manifest = {
   "name": "Bicutan Station (NSCR CP S-03c)",
   "crs": "PRS92 PTM Zone III (EPSG:3123), metres",
@@ -128,13 +227,17 @@ manifest = {
   "levels_m": {"ground_ffl":0.50,"concourse_ffl":4.60,"top_of_rail":10.80,"platform_ffl":11.90,
                "top_of_beam":15.90,"roof":24.70},
   "sources": ["X_Bic_Sta_Ground Floor.dxf","X_Bic_Sta_Concourse.dxf","X_Bic_Sta_Platform.dxf",
-              "X_Bic_Sta_Section.dxf","foundation plan (columns.json)","facade A-CLAD (canopy.json)"],
+              "X_Bic_Sta_Section.dxf","foundation plan (columns.json)","facade A-CLAD (canopy.json)",
+              "main alignment + viaduct section (viaduct.json)"],
   "objects": {"walls": walls, "platform": [slab], "tracks": tracks,
-              "piers": piers, "stairs": stairs, "vault": vault, "lattice": lattice}
+              "piers": piers, "stairs": stairs, "vault": vault, "lattice": lattice,
+              "viaduct_deck": viaduct_deck, "viaduct_piers": viaduct_piers}
 }
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 json.dump(manifest, open(OUT,"w"), indent=1)
 print("walls:", len(walls), "| piers:", len(piers), "| tracks:", len(tracks), "| stairs:", len(stairs),
       "| lattice segs:", len(lattice), "| vault profile pts:", len(profile_offsets))
+print("viaduct deck boxes:", len(viaduct_deck), "| viaduct pier columns:", len(viaduct_piers),
+      "| station extent along alignment:", round(S_LO,1), "to", round(S_HI,1), "m")
 print("origin E,N:", round(E0,2), round(N0,2), "| along-track length:", round(L_along,1), "m")
 print("written:", OUT, os.path.getsize(OUT)//1024, "KB")

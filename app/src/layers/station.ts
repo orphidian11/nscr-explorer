@@ -239,6 +239,10 @@ export interface RealStationManifest {
     stairs?: RealBoxObject | RealBoxObject[]
     vault?: RealVaultObject
     lattice?: RealBoxObject[]
+    /** Viaduct U-girder boxes + pier cap beams, along the NSCR main alignment. */
+    viaduct_deck?: RealBoxObject[]
+    /** Viaduct twin columns (0.5 m cylinders), ground -> +10.0. */
+    viaduct_piers?: RealCylinderObject[]
   }
 }
 
@@ -258,6 +262,7 @@ const STAIR_COLOR = new THREE.Color('#aab0b6')
 const PIER_COLOR = new THREE.Color('#8f959c')
 const LATTICE_COLOR = new THREE.Color('#e2e5e8')
 const VAULT_COLOR = new THREE.Color('#d4d8dc')
+const VIADUCT_DECK_COLOR = new THREE.Color('#6f7680') // steel grey
 
 /** Subtle per-instance lightness variation so instanced walls don't look flat. */
 function varyColor(index: number, base: THREE.Color): THREE.Color {
@@ -429,6 +434,8 @@ export function buildRealStation(manifest: RealStationManifest): StationModel {
   addLayer('stairs', 'Stairs / cores', asArray(objects.stairs).map((obj) => makeSingleBox(obj, STAIR_COLOR)))
   if (objects.vault) addLayer('canopy', 'Canopy (vault)', [makeVaultMesh(objects.vault)])
   addLayer('lattice', `Facade lattice (${objects.lattice?.length ?? 0})`, objects.lattice ? [makeInstancedBoxes(objects.lattice, LATTICE_COLOR)] : [])
+  addLayer('viaduct_deck', `Viaduct deck (${objects.viaduct_deck?.length ?? 0})`, objects.viaduct_deck ? [makeInstancedBoxes(objects.viaduct_deck, VIADUCT_DECK_COLOR)] : [])
+  addLayer('viaduct_piers', `Viaduct piers (${objects.viaduct_piers?.length ?? 0})`, objects.viaduct_piers ? [makeInstancedCylinders(objects.viaduct_piers)] : [])
 
   return { name: manifest.name, root, layers, gltfRefs: [] }
 }
