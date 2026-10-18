@@ -3,7 +3,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { createWalkController } from './walk'
 import type { WalkController } from './walk'
 
-export type CameraPresetName = 'orbit' | 'walk' | 'top'
+export type CameraPresetName = 'orbit' | 'walk' | 'fly' | 'top'
 
 export interface CameraPreset {
   label: string
@@ -16,6 +16,7 @@ export interface CameraPreset {
 export const CAMERA_PRESETS: Record<CameraPresetName, CameraPreset> = {
   orbit: { label: 'Orbit', position: [115, 75, 115], target: [0, 8, 0] },
   walk: { label: 'Walk', position: [26, 1.7, 78], target: [0, 10, -10] },
+  fly: { label: 'Fly', position: [200, 120, 380], target: [-460, 5, -880] },
   top: { label: 'Top', position: [0.01, 230, 0.01], target: [0, 0, 0] },
 }
 
@@ -166,8 +167,8 @@ export function createViewerScene(container: HTMLElement): ViewerScene {
   })
 
   const applyPreset = (name: CameraPresetName): void => {
-    if (name === 'walk') {
-      walk.enter()
+    if (name === 'walk' || name === 'fly') {
+      walk.enter(name)
       return
     }
     walk.exit()
@@ -200,6 +201,17 @@ export function createViewerScene(container: HTMLElement): ViewerScene {
     activePresets.top = {
       label: 'Top',
       position: [center.x + 0.01, center.y + dist * 1.35, center.z + 0.01],
+      target: [center.x, center.y, center.z],
+    }
+    // Fly starts high and off to the side, looking toward the station centre —
+    // a good vantage to fly the corridor from.
+    activePresets.fly = {
+      label: 'Fly',
+      position: [
+        center.x + orbitDir.x * dist * 1.2,
+        center.y + dist * 0.5,
+        center.z + orbitDir.z * dist * 1.2,
+      ],
       target: [center.x, center.y, center.z],
     }
 

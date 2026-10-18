@@ -301,30 +301,41 @@ for i in range(len(al_pts) - 1):
         cur = max(cur, b_hi)
     if cur < hi:
         spans.append((cur, hi))
-    if not spans:
+    # At-grade bed through the FTI box: base slab only (ballast bed), no webs.
+    bed_span = (max(lo, FTI_LO), min(hi, FTI_HI))
+    if not spans and bed_span[1] - bed_span[0] < 1.0:
         continue
     L = math.dist(p1, p2)
     dx, dz = (p2[0] - p1[0]) / L, (p2[1] - p1[1]) / L
     rot = heading_rotY(dx, dz)
     perp = (dz, -dx)  # across-track unit (x,z)
-    for (sa, sb) in spans:
-        if sb - sa < 1.0:
-            continue
-        base_mid = deck_base_y((sa + sb) / 2)
+    def emit_deck(sa, sb, base_mid, webs=True, src_note="alignment_extended U-girder (simplified)"):
         q1 = lerp_pt(p1, p2, (sa - s1) / (s2 - s1))
         q2 = lerp_pt(p1, p2, (sb - s1) / (s2 - s1))
         seg_l = math.dist(q1, q2)
+        if seg_l < 1.0:
+            return
         mx, mz = (q1[0] + q2[0]) / 2, (q1[1] + q2[1]) / 2
         for off in (-TRACK_OFF, TRACK_OFF):
             cx, cz = mx + perp[0] * off, mz + perp[1] * off
             viaduct_deck.append({"kind": "box", "size": [round(seg_l + 0.1, 2), BASE_T, DECK_W],
                                  "pos": [round(cx, 2), round(base_mid - BASE_T / 2, 2), round(cz, 2)], "rotY": round(rot, 4),
-                                 "meta": {"src": "alignment_extended U-girder base slab (simplified)"}})
+                                 "meta": {"src": src_note + " base slab"}})
+            if not webs:
+                continue
             for w in (-1, 1):
                 wx, wz = cx + perp[0] * w * (DECK_W / 2 - WEB_T / 2), cz + perp[1] * w * (DECK_W / 2 - WEB_T / 2)
                 viaduct_deck.append({"kind": "box", "size": [round(seg_l + 0.1, 2), WEB_H, WEB_T],
                                      "pos": [round(wx, 2), round(base_mid + WEB_H / 2, 2), round(wz, 2)], "rotY": round(rot, 4),
-                                     "meta": {"src": "alignment_extended U-girder web (simplified)"}})
+                                     "meta": {"src": src_note + " web"}})
+
+    for (sa, sb) in spans:
+        if sb - sa < 1.0:
+            continue
+        emit_deck(sa, sb, deck_base_y((sa + sb) / 2))
+    if bed_span[1] - bed_span[0] >= 1.0:
+        emit_deck(bed_span[0], bed_span[1], FTI_BASE_Y, webs=False,
+                  src_note="at-grade track bed through FTI (Type E' at-grade design)")
 
 # Piers every 40 m along the alignment (every 4th 10-m sample = CAD pier spacing),
 # skipped inside the station box. Twin 0.5 m columns ground(+1.0)->+10.0 plus a
@@ -448,6 +459,24 @@ fti_canopy = {"kind": "box", "size": [round(FTI_PLATFORM_L + 10, 1), 0.3, 25.0],
               "rotY": round(heading_rotY(tux, tuz), 4), "color": "#d4d8dc",
               "meta": {"src": "flat canopy roof (ASSUMED - Type E' canopy form not dimensioned in DFR)"}}
 
+# FTI's own approaches: reuse the Bicutan-frame deck/piers within +/-1.5 km of
+# FTI, rebased into the FTI-centred frame (the ramp and at-grade bed included).
+def near_fti_deck(o):
+    x, z = o["pos"][0], o["pos"][2]
+    s = x * tux + z * tuz
+    return abs(s - FTI_S) <= 1500
+fti_viaduct_deck = []
+for o0 in viaduct_deck:
+    if near_fti_deck(o0):
+        o = dict(o0); o["pos"] = [round(o0["pos"][0] - fti_x, 2), o0["pos"][1], round(o0["pos"][2] - fti_z, 2)]
+        fti_viaduct_deck.append(o)
+fti_viaduct_piers = []
+for o0 in viaduct_piers:
+    if near_fti_deck(o0):
+        o = dict(o0); o["pos"] = [round(o0["pos"][0] - fti_x, 2), o0["pos"][1], round(o0["pos"][2] - fti_z, 2)]
+        fti_viaduct_piers.append(o)
+
+
 fti_manifest = {
   "name": "FTI Station (NSCR CP S-03b) - JICA massing",
   "crs": "PRS92 PTM Zone III (EPSG:3123), metres",
@@ -460,7 +489,8 @@ fti_manifest = {
               "alignment_extended.json centerline",
               "NOTE: DFR at-grade design superseded by as-built underground CP NSCR-03-B station"],
   "objects": {"platform": fti_platform, "tracks": fti_tracks, "floors": fti_floors,
-              "stairs": fti_stairs, "canopy_box": [fti_canopy], "piers": fti_piers}
+              "stairs": fti_stairs, "canopy_box": [fti_canopy], "piers": fti_piers,
+              "viaduct_deck": fti_viaduct_deck, "viaduct_piers": fti_viaduct_piers}
 }
 with open(r"E:\NSCR\app\src\data\fti-massing.json", "w") as fh:
     json.dump(fti_manifest, fh, indent=1)

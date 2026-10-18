@@ -5,9 +5,22 @@ export interface Release {
   sections: Array<{ title: 'New features' | 'Fixes' | 'Other changes'; items: string[] }>
 }
 
-export const APP_VERSION = 'v0.8.0'
+export const APP_VERSION = 'v0.9.0'
 
 export const RELEASES: Release[] = [
+  {
+    version: 'v0.9.0',
+    date: '2026-10-19',
+    sections: [
+      {
+        title: 'New features',
+        items: [
+          'Fly mode: free WASD flight following the view direction, Space/C for up/down, Shift to boost (60 m/s base) — navigate the corridor without fighting scroll-zoom',
+          'FTI at-grade track bed: the U-girder now continues through the FTI box as an at-grade ballast-style bed, and the standalone FTI view includes its full approach viaduct (±1.5 km, with the descent ramp)',
+        ],
+      },
+    ],
+  },
   {
     version: 'v0.8.0',
     date: '2026-10-19',

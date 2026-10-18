@@ -78,13 +78,17 @@ export function floorYAt(x: number, z: number): number {
 }
 
 const WALK_SPEED = 4 // m/s
+const FLY_SPEED = 60 // m/s — corridor distances between stations are ~2 km
 const RUN_MULT = 2
 const EYE_LERP = 8 // per-second lerp factor for vertical settle
 
+export type NavMode = 'walk' | 'fly'
+
 export interface WalkController {
-  enter: () => void
+  enter: (mode?: NavMode) => void
   exit: () => void
   isActive: () => boolean
+  getMode: () => NavMode
   /** Per-frame update; no-op when inactive. */
   update: (deltaSeconds: number) => void
   dispose: () => void
@@ -106,6 +110,7 @@ export function createWalkController(
   domElement.parentElement?.appendChild(hint)
 
   let active = false
+  let mode: NavMode = 'walk'
   let yaw = 0
   let pitch = 0
   const keys = new Set<string>()
@@ -142,18 +147,26 @@ export function createWalkController(
     camera.rotation.set(pitch, yaw, 0, 'YXZ')
   }
 
-  const enter = (): void => {
-    if (active) return
+  const enter = (navMode: NavMode = 'walk'): void => {
+    if (active && mode === navMode) return
+    if (active) exit()
     active = true
+    mode = navMode
     controls.enabled = false
-    // Start at the current camera XZ, snapped to the floor below.
-    const eye = floorYAt(camera.position.x, camera.position.z) + EYE_HEIGHT
-    camera.position.y = eye
+    if (mode === 'walk') {
+      // Start at the current camera XZ, snapped to the floor below.
+      const eye = floorYAt(camera.position.x, camera.position.z) + EYE_HEIGHT
+      camera.position.y = eye
+      pitch = 0
+    }
     const dir = new THREE.Vector3()
     camera.getWorldDirection(dir)
     yaw = Math.atan2(-dir.x, -dir.z)
-    pitch = 0
     syncEuler()
+    hint.textContent =
+      mode === 'fly'
+        ? 'FLY: click to lock - WASD move (follows view) - Space/C up/down - Shift boost - Esc exit'
+        : 'Click to walk - WASD move - mouse look - Esc exit'
     hint.style.display = 'block'
     window.addEventListener('keydown', onKeyDown)
     window.addEventListener('keyup', onKeyUp)
@@ -179,7 +192,28 @@ export function createWalkController(
   const update = (dt: number): void => {
     if (!active || dt <= 0) return
     const run = keys.has('ShiftLeft') || keys.has('ShiftRight')
-    const speed = WALK_SPEED * (run ? RUN_MULT : 1)
+    const speed = (mode === 'fly' ? FLY_SPEED : WALK_SPEED) * (run ? RUN_MULT : 1)
+
+    if (mode === 'fly') {
+      // Free flight: movement follows the full view direction (incl. pitch),
+      // Space/C for vertical, no ground clamping (min y 0.5 to stay above ground).
+      camera.getWorldDirection(forward)
+      right.set(forward.z, 0, -forward.x).normalize()
+      const move = new THREE.Vector3()
+      if (keys.has('KeyW') || keys.has('ArrowUp')) move.add(forward)
+      if (keys.has('KeyS') || keys.has('ArrowDown')) move.sub(forward)
+      if (keys.has('KeyD') || keys.has('ArrowRight')) move.add(right)
+      if (keys.has('KeyA') || keys.has('ArrowLeft')) move.sub(right)
+      if (keys.has('Space')) move.y += 1
+      if (keys.has('KeyC') || keys.has('ControlLeft')) move.y -= 1
+      if (move.lengthSq() > 0) {
+        move.normalize().multiplyScalar(speed * dt)
+        camera.position.add(move)
+      }
+      if (camera.position.y < 0.5) camera.position.y = 0.5
+      syncEuler()
+      return
+    }
 
     // Camera-relative movement in the horizontal plane (yaw only).
     forward.set(-Math.sin(yaw), 0, -Math.cos(yaw))
@@ -223,5 +257,5 @@ export function createWalkController(
     hint.remove()
   }
 
-  return { enter, exit, isActive: () => active, update, dispose }
+  return { enter, exit, isActive: () => active, getMode: () => mode, update, dispose }
 }
