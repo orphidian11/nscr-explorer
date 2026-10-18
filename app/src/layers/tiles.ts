@@ -108,6 +108,24 @@ export function tileUrl(coord: TileCoord, template = OSM_TILE_TEMPLATE): string 
  */
 const textureCache = new Map<string, THREE.Texture>();
 
+/**
+ * LRU cap on the shared texture cache. Streaming along the line can pull in
+ * hundreds of tiles; beyond this cap the least-recently-used texture is
+ * dropped from the Map (GPU memory is released once no live material still
+ * references it — re-entering the area simply refetches).
+ */
+const TEXTURE_CACHE_MAX = 120;
+
+/** Cache lookup that refreshes LRU order (Map iteration = insertion order). */
+function cacheGet(key: string): THREE.Texture | undefined {
+  const tex = textureCache.get(key);
+  if (tex !== undefined) {
+    textureCache.delete(key);
+    textureCache.set(key, tex);
+  }
+  return tex;
+}
+
 export function cachedTextureCount(): number {
   return textureCache.size;
 }
@@ -117,7 +135,7 @@ export async function loadTileTexture(
   template: string = OSM_TILE_TEMPLATE,
 ): Promise<THREE.Texture | null> {
   const key = `${coord.z}/${coord.x}/${coord.y}@${template}`;
-  const cached = textureCache.get(key);
+  const cached = cacheGet(key);
   if (cached) return cached;
 
   try {
@@ -149,6 +167,12 @@ export async function loadTileTexture(
     texture.minFilter = THREE.LinearFilter;
     texture.generateMipmaps = false;
     textureCache.set(key, texture);
+    // LRU eviction: drop oldest entries once over cap.
+    while (textureCache.size > TEXTURE_CACHE_MAX) {
+      const oldest = textureCache.keys().next().value as string | undefined;
+      if (oldest === undefined) break;
+      textureCache.delete(oldest);
+    }
     return texture;
   } catch (err) {
     console.warn(`[tiles] tile ${key} fetch failed`, err);

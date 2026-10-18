@@ -465,3 +465,50 @@ fti_manifest = {
 with open(r"E:\NSCR\app\src\data\fti-massing.json", "w") as fh:
     json.dump(fti_manifest, fh, indent=1)
 print("FTI manifest:", len(fti_platform), "platform objs | origin frame shared with Bicutan | FTI s =", round(FTI_S, 1))
+def as_list(x):
+    return x if isinstance(x, list) else [x]
+
+
+
+# ================= Line manifest: Bicutan <-> FTI (v0.8.0) =================
+# Both stations + full viaduct in ONE scene (Bicutan local frame) so the user
+# can travel the corridor continuously. FTI objects are rebased from their
+# FTI-centred frame back into the Bicutan frame (+fti_x, fti_z).
+def rebase(objs, dx, dz):
+    out = []
+    for o in objs:
+        o = dict(o)
+        o["pos"] = [round(o["pos"][0] + dx, 2), o["pos"][1], round(o["pos"][2] + dz, 2)]
+        out.append(o)
+    return out
+
+fti_dx, fti_dz = fti_x, fti_z   # FTI centre in the Bicutan local frame
+line_objects = {
+    "walls": walls,
+    "platform": list(as_list(platform)) + rebase(as_list(fti_platform), fti_dx, fti_dz),
+    "tracks": tracks + rebase(fti_tracks, fti_dx, fti_dz),
+    "piers": piers + rebase(fti_piers, fti_dx, fti_dz),
+    "stairs": stairs + rebase(fti_stairs, fti_dx, fti_dz),
+    "floors": floors + rebase(fti_floors, fti_dx, fti_dz),
+    "vault": vault,
+    "lattice": lattice,
+    "beams": beams,
+    "canopy_box": rebase([fti_canopy], fti_dx, fti_dz),
+    "viaduct_deck": viaduct_deck,
+    "viaduct_piers": viaduct_piers,
+}
+def as_list(x):
+    return x if isinstance(x, list) else [x]
+line_manifest = {
+  "name": "Bicutan <-> FTI (line, v0.8.0)",
+  "crs": "PRS92 PTM Zone III (EPSG:3123), metres",
+  "origin_easting": round(E0, 2), "origin_northing": round(N0, 2),
+  "origin_wgs84": {"lat": 14.488419, "lon": 121.045368},
+  "levels_m": {"ground_ffl": 0.50, "concourse_ffl": 4.60, "top_of_rail": 10.80,
+               "platform_ffl": 11.90, "roof": 24.70},
+  "sources": ["bicutan-real.json objects", "fti-massing.json objects (rebased)"],
+  "objects": line_objects
+}
+with open(r"E:\\NSCR\\app\\src\\data\\line-bicutan-fti.json", "w") as fh:
+    json.dump(line_manifest, fh, indent=1)
+print("line manifest written:", sum(len(v) if isinstance(v, list) else 1 for v in line_objects.values()), "objects")

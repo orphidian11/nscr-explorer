@@ -5,9 +5,29 @@ export interface Release {
   sections: Array<{ title: 'New features' | 'Fixes' | 'Other changes'; items: string[] }>
 }
 
-export const APP_VERSION = 'v0.7.0'
+export const APP_VERSION = 'v0.8.0'
 
 export const RELEASES: Release[] = [
+  {
+    version: 'v0.8.0',
+    date: '2026-10-19',
+    sections: [
+      {
+        title: 'New features',
+        items: [
+          'Continuous map coverage: OSM tiles now stream dynamically around the camera, so the ground follows you along the whole line (no more void between stations)',
+          'Click-to-select: clicking any station or viaduct element in the 3D scene auto-selects the nearest station in the dropdown and loads it',
+          'New "Line: Bicutan ↔ FTI" option — both stations and the full viaduct in one scene for continuous travel',
+        ],
+      },
+      {
+        title: 'Fixes',
+        items: [
+          'Bicutan viewport rendered blank after the viaduct extension: the camera far plane now rescales with the framed extent, and the camera frames the station core instead of the full multi-km viaduct',
+        ],
+      },
+    ],
+  },
   {
     version: 'v0.7.0',
     date: '2026-10-19',

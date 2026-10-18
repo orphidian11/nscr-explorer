@@ -32,6 +32,8 @@ export interface ViewerScene {
   applyPreset: (name: CameraPresetName) => void
   /** Recompute the presets so they frame the given bounds, then apply 'orbit'. */
   fitCameraTo: (box: THREE.Box3) => void
+  /** Register a handler for click-picks on station geometry (drag-safe). */
+  setPickHandler: (handler: ((worldPoint: THREE.Vector3) => void) | null) => void
   setGridVisible: (visible: boolean) => void
   dispose: () => void
 }
@@ -117,6 +119,30 @@ export function createViewerScene(container: HTMLElement): ViewerScene {
 
   const walk = createWalkController(camera, renderer.domElement, controls)
 
+  // Click-pick: raycast station geometry on genuine clicks (not orbit drags).
+  const pickState: { handler: ((worldPoint: THREE.Vector3) => void) | null } = { handler: null }
+  let downX = 0
+  let downY = 0
+  const raycaster = new THREE.Raycaster()
+  renderer.domElement.addEventListener('pointerdown', (e) => {
+    downX = e.clientX
+    downY = e.clientY
+  })
+  renderer.domElement.addEventListener('pointerup', (e) => {
+    const handler = pickState.handler
+    if (!handler) return
+    if (Math.hypot(e.clientX - downX, e.clientY - downY) > 5) return // was a drag
+    const rect = renderer.domElement.getBoundingClientRect()
+    const ndc = new THREE.Vector2(
+      ((e.clientX - rect.left) / rect.width) * 2 - 1,
+      -((e.clientY - rect.top) / rect.height) * 2 + 1,
+    )
+    raycaster.setFromCamera(ndc, camera)
+    const hits = raycaster.intersectObjects(scene.children, true)
+    const hit = hits.find((h) => !h.object.name.startsWith('tile-')) // ignore ground tiles
+    if (hit) handler(hit.point)
+  })
+
   renderer.setAnimationLoop((time) => {
     const last = (renderer as unknown as { __lastFrameTime?: number }).__lastFrameTime
     const dt = last === undefined ? 0 : Math.min((time - last) / 1000, 0.1)
@@ -165,6 +191,10 @@ export function createViewerScene(container: HTMLElement): ViewerScene {
     }
 
     controls.maxDistance = dist * 6
+    // The far plane must cover the framed extent — a ±4 km viaduct blows past a
+    // fixed 2500 m far plane and renders as a blank sky-coloured viewport.
+    camera.far = Math.max(camera.far, dist * 6)
+    camera.updateProjectionMatrix()
     if (scene.fog instanceof THREE.Fog) {
       scene.fog.near = dist * 1.6
       scene.fog.far = dist * 6
@@ -185,5 +215,8 @@ export function createViewerScene(container: HTMLElement): ViewerScene {
     renderer.domElement.remove()
   }
 
-  return { scene, camera, renderer, controls, walk, applyPreset, fitCameraTo, setGridVisible, dispose }
+  const setPickHandler = (handler: ((worldPoint: THREE.Vector3) => void) | null): void => {
+    pickState.handler = handler
+  }
+  return { scene, camera, renderer, controls, walk, applyPreset, fitCameraTo, setPickHandler, setGridVisible, dispose }
 }

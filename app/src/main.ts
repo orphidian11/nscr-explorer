@@ -4,8 +4,8 @@ import { createViewerScene } from './viewer/scene'
 import type { CameraPresetName } from './viewer/scene'
 import { loadStation } from './viewer/loaders'
 import type { StationLayerHandle } from './layers/station'
-import { createPanel } from './ui/panel'
-import { createGroundLayer, groundAttribution } from './layers/ground'
+import { createPanel, STATION_OPTIONS } from './ui/panel'
+import { createGroundLayer, groundAttribution, localToLatLon } from './layers/ground'
 
 const container = document.querySelector<HTMLElement>('#app')
 if (!container) {
@@ -40,6 +40,17 @@ function setGroundAnchor(anchor: { lat: number; lon: number }): void {
   })
 }
 
+// Camera-follow tile streaming: stream OSM tiles around the camera's XZ
+// position. scene.ts's render loop is owned elsewhere, so hook the controls'
+// 'change' event plus a 1 Hz fallback (walk mode moves the camera without a
+// controls change). update() throttles internally to half-tile movement.
+function updateGroundStreaming(): void {
+  ground?.update(viewer.camera.position.x, viewer.camera.position.z)
+}
+viewer.controls.addEventListener('change', updateGroundStreaming)
+// Timer handle intentionally not stored — streaming runs for the page lifetime.
+setInterval(updateGroundStreaming, 1000)
+
 const panel = createPanel(container, {
   onLayerToggle: (id, visible) => {
     if (id === 'grid') {
@@ -54,6 +65,31 @@ const panel = createPanel(container, {
   onStationChange: (stationId) => {
     void loadAndShow(stationId)
   },
+})
+
+// Click-to-select: clicking station geometry selects the nearest station in the
+// dropdown (and loads it if it differs from what's loaded).
+let loadedStationId = ''
+const METRES_PER_DEG_LAT = 110540
+viewer.setPickHandler((worldPoint) => {
+  // The scene's local origin IS the loaded manifest's anchor; geolocate the
+  // clicked point, then pick the nearest station anchor.
+  const origin = STATION_OPTIONS.find((o) => o.id === loadedStationId)
+  const anchor = origin?.lat != null && origin.lon != null
+    ? { lat: origin.lat, lon: origin.lon }
+    : FALLBACK_ANCHOR
+  const hit = localToLatLon(worldPoint.x, worldPoint.z, anchor.lat, anchor.lon)
+  let nearest: { id: string; d: number } | null = null
+  for (const opt of STATION_OPTIONS) {
+    if (opt.lat == null || opt.lon == null) continue
+    const dx = (opt.lon - hit.lon) * Math.cos((hit.lat * Math.PI) / 180) * 111320
+    const dz = -(opt.lat - hit.lat) * METRES_PER_DEG_LAT
+    const d = Math.hypot(dx, dz)
+    if (nearest == null || d < nearest.d) nearest = { id: opt.id, d }
+  }
+  if (nearest && nearest.id !== loadedStationId) {
+    void loadAndShow(nearest.id)
+  }
 })
 panel.setStatus('Loading station manifest…')
 
@@ -80,6 +116,8 @@ function disposeCurrentStation(): void {
 
 async function loadAndShow(stationId: string): Promise<void> {
   panel.setStatus('Loading station manifest…')
+  loadedStationId = stationId
+  panel.setStationValue(stationId)
   disposeCurrentStation()
   try {
     const station = await loadStation(manifestUrlFor(stationId))
@@ -93,8 +131,16 @@ async function loadAndShow(stationId: string): Promise<void> {
       ...station.layers.map((layer) => ({ id: layer.id, label: layer.label, visible: layer.visible() })),
       { id: 'grid', label: 'Ground grid', visible: true },
     ])
-    // Frame the camera on the real footprint of whichever manifest loaded.
-    const bounds = new THREE.Box3().setFromObject(station.root)
+    // Frame the camera on the station core, excluding the multi-km viaduct —
+    // framing the full viaduct centres the camera kilometres from the station.
+    const coreBounds = new THREE.Box3()
+    for (const layer of station.layers) {
+      if (layer.id.startsWith('viaduct')) continue
+      coreBounds.expandByObject(layer.group)
+    }
+    const bounds = coreBounds.isEmpty()
+      ? new THREE.Box3().setFromObject(station.root)
+      : coreBounds
     viewer.fitCameraTo(bounds)
     panel.setStatus(`${station.layers.length} layers loaded from manifest`)
   } catch (error) {

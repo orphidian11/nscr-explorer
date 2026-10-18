@@ -14,9 +14,10 @@ export interface PanelCallbacks {
   onStationChange: (stationId: string) => void
 }
 
-export const STATION_OPTIONS: Array<{ id: string; label: string }> = [
-  { id: 'bicutan-real', label: 'Bicutan (CAD, real)' },
-  { id: 'fti-massing', label: 'FTI (JICA massing)' },
+export const STATION_OPTIONS: Array<{ id: string; label: string; lat?: number; lon?: number }> = [
+  { id: 'bicutan-real', label: 'Bicutan (CAD, real)', lat: 14.488419, lon: 121.045368 },
+  { id: 'fti-massing', label: 'FTI (JICA massing)', lat: 14.504494, lon: 121.036389 },
+  { id: 'line-bicutan-fti', label: 'Line: Bicutan ↔ FTI', lat: 14.488419, lon: 121.045368 },
   { id: 'bicutan-placeholder', label: 'Bicutan (placeholder)' },
 ]
 
@@ -24,6 +25,8 @@ export interface PanelHandle {
   root: HTMLElement
   setStation: (name: string, layers: PanelLayerSpec[]) => void
   setStatus: (message: string, kind?: 'info' | 'error') => void
+  /** Set the dropdown value WITHOUT triggering the load callback. */
+  setStationValue: (stationId: string) => void
 }
 
 const CAMERA_BUTTONS: Array<{ preset: CameraPresetName; label: string }> = [
@@ -111,5 +114,5 @@ export function createPanel(host: HTMLElement, callbacks: PanelCallbacks): Panel
     status.classList.toggle('error', kind === 'error')
   }
 
-  return { root, setStation, setStatus }
+  return { root, setStation, setStatus, setStationValue: (id) => { stationPicker.value = id } }
 }
