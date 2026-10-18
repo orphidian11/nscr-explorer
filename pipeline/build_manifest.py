@@ -44,13 +44,6 @@ def wall_boxes(segs, base_y, top_y):
 
 walls = wall_boxes(SEGS["gf"], 0.50, 4.60) + wall_boxes(SEGS["cc"], 4.60, 11.90)
 
-# Platform slab from A-SLAB closed outline (use bbox of PL segs as slab; refine later)
-pe = all_bbox([SEGS["pl"]])
-slab = {"kind":"box",
-        "size":[round(pe[2]-pe[0],1), 0.4, round(pe[3]-pe[1],1)],
-        "pos":[round((pe[0]+pe[2])/2 - E0,1), 11.70, round(-((pe[1]+pe[3])/2 - N0),1)],
-        "meta":{"src":"X_Bic_Sta_Platform A-SLAB bbox","ffl":11.90}}
-
 # --- NSCR main-alignment loading (viaduct.json, X_DD_NSRP_Main_Alignment) ---
 # 201 sampled [e,n] pts every 10 m, +/-1000 m along the alignment through Bicutan.
 # Needed before the tracks: the station long axis (and tracks) runs PARALLEL to
@@ -76,8 +69,6 @@ _s_all = [x * tux + z * tuz for key in ("gf", "cc", "pl") for seg in SEGS[key]
           for (x, z) in ((e - E0, -(n - N0)) for (e, n) in seg)]
 S_LO, S_HI = min(_s_all), max(_s_all)
 
-L_along = pe[2] - pe[0]  # platform bbox E-extent (stairs regularisation + reference)
-
 # Tracks: along the alignment axis through the station centre, top of rail +10.80
 # (from Section dims). 8.8 m track spacing per section DIMS (X_Bic_Sta_Section.dxf)
 # -> +/-4.4 m perpendicular to the centreline. Length spans the station footprint
@@ -92,6 +83,64 @@ for off in (-TRACK_OFF, TRACK_OFF):
                    "pos": [round(tux * alC - tuz * off, 2), 10.65, round(tuz * alC + tux * off, 2)],
                    "rotY": round(heading_rotY(tux, tuz), 4),
                    "meta": {"src": "typical double track along NSCR alignment, 8.8 m spacing per section DIMS (+/-4.4 m), TOR +10.80"}})
+
+# Platform: TWO SIDE PLATFORMS from the real balustrade footprint (X_Bic_Sta_Platform
+# A-BALUSTRADE): end walls at E 504690.7-504698.5 (N end) and 504773.7-504781.4 (S end),
+# 4.0 m across-track. Platform edges at ~7.0 m offset from the centreline (the 6.97 m
+# section dim = U-girder outer edge 4.4+2.57), so each side platform is ~4 m wide
+# centred at +/-9.0 m. Top +11.90 (1.1 m above rail top +10.80). Yellow tactile
+# strips + inner-edge parapets added as detail.
+PLAT_HALF_W = 2.0     # half of the 4.0 m across-track width
+PLAT_OFF = 9.0        # side-platform centre offset from centreline
+PLAT_TOP = 11.90
+
+def track_frame_pt(along_s, offset):
+    # point at along-offset s and across-track offset from the centreline
+    return [round(tux * along_s - tuz * offset, 2), round(tuz * along_s + tux * offset, 2)]
+
+# along-track s interval of the platform: project the two end-wall centres
+_end_n = (504694.6 - E0, -(1602447.25 - N0))
+_end_s = (504777.55 - E0, -(1602286.4 - N0))
+s_n = _end_n[0] * tux + _end_n[1] * tuz
+s_s = _end_s[0] * tux + _end_s[1] * tuz
+P_LO, P_HI = min(s_n, s_s) - 3.9, max(s_n, s_s) + 3.9   # extend past the end walls
+P_C = (P_LO + P_HI) / 2
+P_LEN = P_HI - P_LO
+L_along = P_LEN  # platform along-track extent (stairs regularisation + reference)
+
+platform = []
+for side in (-1, 1):
+    cx, cz = track_frame_pt(P_C, side * PLAT_OFF)
+    # main slab (top at PLAT_TOP)
+    platform.append({"kind": "box", "size": [round(P_LEN, 1), 0.4, PLAT_HALF_W * 2],
+                     "pos": [cx, round(PLAT_TOP - 0.2, 2), cz],
+                     "rotY": round(heading_rotY(tux, tuz), 4),
+                     "color": "#c3c8cd",
+                     "meta": {"src": "X_Bic_Sta_Platform A-BALUSTRADE footprint; side platform, edge ~7.0 m offset (6.97 m dim)"}})
+    # tactile warning strip along the inner (track-side) edge, yellow
+    tx, tz = track_frame_pt(P_C, side * (PLAT_OFF - PLAT_HALF_W + 0.35))
+    platform.append({"kind": "box", "size": [round(P_LEN - 1.0, 1), 0.06, 0.7],
+                     "pos": [tx, round(PLAT_TOP + 0.06, 2), tz],
+                     "rotY": round(heading_rotY(tux, tuz), 4),
+                     "color": "#d9a821",
+                     "meta": {"src": "tactile warning strip (standard PT detail)"}})
+    # inner-edge parapet/handrail
+    px, pz = track_frame_pt(P_C, side * (PLAT_OFF - PLAT_HALF_W - 0.05))
+    platform.append({"kind": "box", "size": [round(P_LEN, 1), 1.2, 0.12],
+                     "pos": [px, round(PLAT_TOP + 0.6, 2), pz],
+                     "rotY": round(heading_rotY(tux, tuz), 4),
+                     "color": "#b7bcc2",
+                     "meta": {"src": "inner-edge balustrade (A-BALUSTRADE line)"}})
+
+# end walls from the real balustrade bboxes (7.8 x 4.0 m at each platform end)
+for cE, cN in ((504694.6, 1602447.25), (504777.55, 1602286.4)):
+    ex, ez = cE - E0, -(cN - N0)
+    platform.append({"kind": "box", "size": [round(7.8, 1), 1.4, 4.0],
+                     "pos": [round(ex, 2), round(PLAT_TOP + 0.7, 2), round(ez, 2)],
+                     "rotY": round(heading_rotY(tux, tuz), 4),
+                     "color": "#b7bcc2",
+                     "meta": {"src": "X_Bic_Sta_Platform A-BALUSTRADE end wall (real bbox)"}})
+
 
 # --- Real structural columns (X_BIC-ST-FOUNDATION PLAN via columns.json) ---
 # 2.1 m = real column pad width; 5.4 / 6.8 m sizes are PILE-CAP pad sizes,
@@ -229,7 +278,7 @@ manifest = {
   "sources": ["X_Bic_Sta_Ground Floor.dxf","X_Bic_Sta_Concourse.dxf","X_Bic_Sta_Platform.dxf",
               "X_Bic_Sta_Section.dxf","foundation plan (columns.json)","facade A-CLAD (canopy.json)",
               "main alignment + viaduct section (viaduct.json)"],
-  "objects": {"walls": walls, "platform": [slab], "tracks": tracks,
+  "objects": {"walls": walls, "platform": platform, "tracks": tracks,
               "piers": piers, "stairs": stairs, "vault": vault, "lattice": lattice,
               "viaduct_deck": viaduct_deck, "viaduct_piers": viaduct_piers}
 }

@@ -202,6 +202,7 @@ export interface RealBoxObject {
   size: [number, number, number]
   pos: [number, number, number]
   rotY?: number
+  color?: string
   meta?: Record<string, unknown>
 }
 
@@ -294,7 +295,7 @@ function makeInstancedBoxes(
   const matrix = new THREE.Matrix4()
   objects.forEach((obj, index) => {
     mesh.setMatrixAt(index, boxMatrix(obj, matrix))
-    mesh.setColorAt(index, varyColor(index, baseColor))
+    mesh.setColorAt(index, obj.color ? new THREE.Color(obj.color) : varyColor(index, baseColor))
   })
   mesh.instanceMatrix.needsUpdate = true
   if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true
@@ -390,7 +391,7 @@ function makeVaultMesh(obj: RealVaultObject): THREE.Mesh {
 function makeSingleBox(obj: RealBoxObject, color: THREE.Color): THREE.Mesh {
   const mesh = new THREE.Mesh(
     new THREE.BoxGeometry(obj.size[0], obj.size[1], obj.size[2]),
-    new THREE.MeshStandardMaterial({ color, roughness: 0.85, metalness: 0.08 }),
+    new THREE.MeshStandardMaterial({ color: obj.color ? new THREE.Color(obj.color) : color, roughness: 0.85, metalness: 0.08 }),
   )
   mesh.position.set(obj.pos[0], obj.pos[1], obj.pos[2])
   mesh.rotation.y = obj.rotY ?? 0
