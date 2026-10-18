@@ -1,4 +1,6 @@
 import type { CameraPresetName } from '../viewer/scene'
+import { APP_VERSION } from './changelog'
+import { openChangelog } from './changelog-view'
 
 export interface PanelLayerSpec {
   id: string
@@ -43,7 +45,15 @@ function el<K extends keyof HTMLElementTagNameMap>(
 export function createPanel(host: HTMLElement, callbacks: PanelCallbacks): PanelHandle {
   const root = el('aside', 'panel')
 
-  const title = el('h1', 'panel-title', 'NSCR 3D Viewer')
+  const title = el('h1', 'panel-title', 'NSCR EXPLORER')
+
+  // Version badge + release-notes popup
+  const versionBadge = el('button', 'version-badge', APP_VERSION) as HTMLButtonElement
+  versionBadge.type = 'button'
+  versionBadge.title = 'Release notes'
+  versionBadge.addEventListener('click', () => openChangelog())
+  const titleRow = el('div', 'title-row')
+  titleRow.append(title, versionBadge)
 
   const stationLabel = el('div', 'panel-label', 'Station')
   const stationPicker = el('select', 'station-picker') as HTMLSelectElement
@@ -78,7 +88,7 @@ export function createPanel(host: HTMLElement, callbacks: PanelCallbacks): Panel
   const status = el('div', 'panel-status', '')
   const hint = el('div', 'panel-hint', 'Drag to orbit · scroll to zoom · right-drag to pan')
 
-  root.append(title, stationLabel, stationPicker, stationName, layersLabel, layerList, cameraLabel, buttonRow, status, hint)
+  root.append(titleRow, stationLabel, stationPicker, stationName, layersLabel, layerList, cameraLabel, buttonRow, status, hint)
   host.appendChild(root)
 
   const setStation = (name: string, layers: PanelLayerSpec[]): void => {
