@@ -19,9 +19,10 @@ WALL_T = 0.25  # wall thickness, m (assumption; refine from double-line spacing)
 
 import os as _os
 
-def _atomic_json_dump(obj, path, attempts=5):
-    # Windows: the dev server's watcher can briefly lock the target — retry,
-    # and fall back to a plain in-place write if replace keeps failing.
+def _atomic_json_dump(obj, path, attempts=12):
+    # Windows: the dev server's watcher / antivirus can briefly hold the target
+    # after a rename — retry up to ~30 s. Only then fall back to an in-place
+    # write (small residual risk of a concurrent partial read).
     import time as _time
     tmp = path + ".tmp"
     for i in range(attempts):
@@ -31,7 +32,7 @@ def _atomic_json_dump(obj, path, attempts=5):
             _os.replace(tmp, path)
             return
         except PermissionError:
-            _time.sleep(0.5 * (i + 1))
+            _time.sleep(1.0 + i * 0.5)
     with open(path, "w") as fh:
         json.dump(obj, fh, indent=1)
 
