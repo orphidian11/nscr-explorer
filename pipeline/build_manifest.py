@@ -17,6 +17,24 @@ SEGS = json.load(open(r"E:\NSCR\pipeline\wall_segments.json"))
 E0 = None; N0 = None  # set below
 WALL_T = 0.25  # wall thickness, m (assumption; refine from double-line spacing)
 
+import os as _os
+
+def _atomic_json_dump(obj, path, attempts=5):
+    # Windows: the dev server's watcher can briefly lock the target — retry,
+    # and fall back to a plain in-place write if replace keeps failing.
+    import time as _time
+    tmp = path + ".tmp"
+    for i in range(attempts):
+        try:
+            with open(tmp, "w") as fh:
+                json.dump(obj, fh, indent=1)
+            _os.replace(tmp, path)
+            return
+        except PermissionError:
+            _time.sleep(0.5 * (i + 1))
+    with open(path, "w") as fh:
+        json.dump(obj, fh, indent=1)
+
 def all_bbox(segs_list):
     pts = [p for segs in segs_list for s in segs for p in s]
     xs = [p[0] for p in pts]; ys = [p[1] for p in pts]
@@ -376,7 +394,7 @@ manifest = {
               "beams": beams, "floors": floors}
 }
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
-json.dump(manifest, open(OUT,"w"), indent=1)
+_atomic_json_dump(manifest, OUT)
 print("walls:", len(walls), "| piers:", len(piers), "| tracks:", len(tracks), "| stairs:", len(stairs),
       "| lattice segs:", len(lattice), "| vault profile pts:", len(profile_offsets))
 print("viaduct deck boxes:", len(viaduct_deck), "| viaduct pier columns:", len(viaduct_piers),
@@ -493,7 +511,7 @@ fti_manifest = {
               "viaduct_deck": fti_viaduct_deck, "viaduct_piers": fti_viaduct_piers}
 }
 with open(r"E:\NSCR\app\src\data\fti-massing.json", "w") as fh:
-    json.dump(fti_manifest, fh, indent=1)
+    _atomic_json_dump(fti_manifest, r"E:\NSCR\app\src\data\fti-massing.json")
 print("FTI manifest:", len(fti_platform), "platform objs | origin frame shared with Bicutan | FTI s =", round(FTI_S, 1))
 def as_list(x):
     return x if isinstance(x, list) else [x]
@@ -540,5 +558,5 @@ line_manifest = {
   "objects": line_objects
 }
 with open(r"E:\\NSCR\\app\\src\\data\\line-bicutan-fti.json", "w") as fh:
-    json.dump(line_manifest, fh, indent=1)
+    _atomic_json_dump(line_manifest, r"E:\NSCR\app\src\data\line-bicutan-fti.json")
 print("line manifest written:", sum(len(v) if isinstance(v, list) else 1 for v in line_objects.values()), "objects")
