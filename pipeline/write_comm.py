@@ -1,0 +1,34 @@
+import json
+data={
+ "entrances":[
+  {"e":504783,"n":1602292,"side":"east (FTI side), south end of station",
+   "evidence":"Site plan 'ENTRY' labels x2 (504782,1602291 / 504793,1602315); GF doors (504775,1602295)(504790,1602293)(504770,1602290); drop-off (504809,1602254); escalator+stairs core here"},
+  {"e":504731,"n":1602430,"side":"north end, central-west of station",
+   "evidence":"Site plan 'ENTRY/EXIT' labels x2 (504735,1602422 / 504726,1602438); GF doors (504699,1602446)(504726,1602447); GF stair cores up at (504697,1602451) and (504725,1602450)"},
+  {"e":504765,"n":1602368,"side":"east (FTI side), mid-station STATION PLAZA",
+   "evidence":"Site plan 'EXIT' (504770,1602361) and 'STATION PLAZA' (504786,1602389); GF door cluster (504755,1602348, 3 doors) + gate line (504758,1602350, 15 A-GATE entities); secondary gate line (504736,1602395, 11 A-GATE)"}
+ ],
+ "circulation":[
+  {"level_from":0.5,"level_to":4.6,"kind":"stairs","e":504800,"n":1602294,"note":"south stair core (53 GF stair entities; matches concourse cluster 504801,1602296)"},
+  {"level_from":0.5,"level_to":4.6,"kind":"stairs","e":504725,"n":1602450,"note":"north stair core A"},
+  {"level_from":0.5,"level_to":4.6,"kind":"stairs","e":504697,"n":1602451,"note":"north stair core B (west/SLEX edge)"},
+  {"level_from":0.5,"level_to":4.6,"kind":"escalator","e":504780,"n":1602269,"note":"south escalator, slightly south of station bbox, at south entry plaza"},
+  {"level_from":4.6,"level_to":11.9,"kind":"stairs","e":504797,"n":1602295,"note":"south concourse->platform stairs (concourse 32-ent cluster; platform cluster 504793,1602294)"},
+  {"level_from":4.6,"level_to":11.9,"kind":"stairs","e":504715,"n":1602445,"note":"north concourse->platform stairs (platform mega-cluster 119 entities at 504711,1602453 with A-SLAB landing)"},
+  {"level_from":4.6,"level_to":11.9,"kind":"stairs","e":504727,"n":1602430,"note":"concourse north stairs cluster (matches platform cluster 504724,1602427)"},
+  {"level_from":4.6,"level_to":11.9,"kind":"stairs","e":504754,"n":1602370,"note":"mid-station stair flights on platform plan (504748,1602380 / 504759,1602360, 26 entities each) — likely intermediate concourse-platform flights"},
+  {"level_from":0.5,"level_to":11.9,"kind":"elevator","e":504689,"n":1602415,"note":"A-Elev-Pen2 shaft, north-west bank, present on all 3 levels"},
+  {"level_from":0.5,"level_to":11.9,"kind":"elevator","e":504704,"n":1602423,"note":"A-Elev-Pen2 shaft, north bank, all 3 levels"},
+  {"level_from":0.5,"level_to":11.9,"kind":"elevator","e":504748,"n":1602300,"note":"A-Elev-Pen2 shaft, south-west bank, all 3 levels"},
+  {"level_from":0.5,"level_to":11.9,"kind":"elevator","e":504764,"n":1602308,"note":"A-Elev-Pen2 shaft, south bank, all 3 levels"}
+ ],
+ "floors":[
+  {"name":"ground","elev":0.5,"bbox":[504685.0,1602280.0,504802.5,1602462.3]},
+  {"name":"concourse","elev":4.6,"bbox":[504685.1,1602281.9,504801.8,1602459.7]}
+ ],
+ "notes":"Coordinates PRS92 Zone III metres (easting,northing). Alignment azimuth -28.3 deg (heading NNW): west = SLEX/West Service Road side, east = FTI/neighborhood side. Entrances identified from X_Bic_Site Plan.dxf text labels (ENTRY/ENTRY/ENTRY-EXIT x2/EXIT/DROP-OFF x2/STATION PLAZA/ENTRANCE at 504652,1602597 NW walkway) cross-checked against GF A-DOOR/A-GATE clusters. Ground slab = GF A-WALL/A-WALL-OPT/WALL geometry bbox clipped to station bbox; concourse slab = concourse WALL bbox (walls already within bbox). Ground walls extend slightly beyond given bbox south (to N 1602255, escalator/entry pavilion) and west (E 504661, boundary wall) — recorded bboxes are clipped to station bbox E 504685-504810 N 1602280-1602465. No A-SLAB/floor plates exist on GF/concourse files (platform file has 8 A-SLAB entities only at north stair landing). Escalators drawn as blocks whose centroids fall partly outside bbox; single GF->concourse escalator found at south entry. Fare gate lines (89 A-GATE) are on the CONCOURSE, not ground; the GF 29 A-GATE entities form two interior control lines (504758,1602350 / 504736,1602395) around the stair cores. DWG sources X_Bic_Site Plan.dwg / X_Bic_Elevated Walkway.dwg converted via ODAFileConverter to E:/NSCR/pipeline/dxf/xrefs_site/."
+}
+with open(r"E:/NSCR/pipeline/commuter.json","w") as f: json.dump(data,f,indent=1)
+print("entrances:",len(data["entrances"]),[ (x['e'],x['n']) for x in data['entrances']])
+print("circulation:",len(data["circulation"]))
+print("floors:",data["floors"])

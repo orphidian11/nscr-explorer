@@ -202,6 +202,55 @@ for z in (-30, 30):
                        "pos":[round(-L_along/2+10 + lvl*8,1), round((by+ty)/2,2), z],
                        "meta":{"src":"regularized stair core (A-STAIRS clusters seen in GF/Platform plans)"}})
 
+
+
+# --- Framing beams (framing.json, GL +9.750 level) ---
+# Portal beams under the tracks at +9.75 (1.0 m wide), longitudinal beams; all
+# georeferenced PRS92 (extract_framing.py). Rendered as boxes along their segments.
+FR = json.load(open(r"E:\NSCR\pipeline\framing.json"))
+beams = []
+for lvl in FR["levels"]:
+    if lvl["name"] != "GL +9.750":
+        continue
+    elev = lvl["elev"]
+    for b in lvl["beams"]:
+        w = b["width_m"]
+        for (e1, n1), (e2, n2) in b["segments"]:
+            x1, z1 = e1 - E0, -(n1 - N0)
+            x2, z2 = e2 - E0, -(n2 - N0)
+            L = math.dist((x1, z1), (x2, z2))
+            if L < 1.0:
+                continue
+            ang = math.degrees(math.atan2(z2 - z1, x2 - x1))
+            beams.append({"kind": "box",
+                          "size": [round(L, 2), 0.8, w],
+                          "pos": [round((x1 + x2) / 2, 2), round(elev + 0.4, 2), round((z1 + z2) / 2, 2)],
+                          "rotY": round(-math.radians(ang), 4),
+                          "meta": {"src": "framing.json GL +9.750 " + b["kind"], "width_m": w}})
+
+# --- Walkable floor slabs ---
+# Ground +0.50 and concourse +4.60 plates. Footprint from the ACTUAL wall-segment
+# endpoints projected onto the alignment frame (axis-aligned bboxes overstate a
+# rotated footprint by ~30% per axis). Concourse clamped to the 38.5 m grid width.
+CM = json.load(open(r"E:\NSCR\pipeline\commuter.json"))
+floors = []
+for fl in CM["floors"]:
+    key = "gf" if fl["name"] == "ground" else "cc"
+    pts = [(e - E0, -(n - N0)) for seg in SEGS[key] for (e, n) in seg]
+    ss = [x * tux + z * tuz for x, z in pts]
+    offs = [x * -tuz + z * tux for x, z in pts]
+    L = max(ss) - min(ss)
+    s_mid = (max(ss) + min(ss)) / 2
+    W = min(max(offs) - min(offs), 38.5 if key == "cc" else 45.0)
+    off_mid = (max(offs) + min(offs)) / 2
+    cx = tux * s_mid - tuz * off_mid
+    cz = tuz * s_mid + tux * off_mid
+    floors.append({"kind": "box", "size": [round(L, 1), 0.3, round(W, 1)],
+                   "pos": [round(cx, 2), round(fl["elev"] - 0.15, 2), round(cz, 2)],
+                   "rotY": round(heading_rotY(tux, tuz), 4),
+                   "color": "#d6d9dd" if fl["name"] == "concourse" else "#c9ccd0",
+                   "meta": {"src": "wall-segment projection (commuter.json floors)", "name": fl["name"], "elev": fl["elev"]}})
+
 # --- NSCR main-alignment viaduct (reuses al_pts/tangent/extent loaded above) ---
 # Per-track U-girders at +/-4.4 m (8.8 m spacing, section DIMS), simplified as
 # 3 boxes per segment (base slab + 2 webs); piers every 40 m (CAD pier markers),
@@ -280,7 +329,8 @@ manifest = {
               "main alignment + viaduct section (viaduct.json)"],
   "objects": {"walls": walls, "platform": platform, "tracks": tracks,
               "piers": piers, "stairs": stairs, "vault": vault, "lattice": lattice,
-              "viaduct_deck": viaduct_deck, "viaduct_piers": viaduct_piers}
+              "viaduct_deck": viaduct_deck, "viaduct_piers": viaduct_piers,
+              "beams": beams, "floors": floors}
 }
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 json.dump(manifest, open(OUT,"w"), indent=1)

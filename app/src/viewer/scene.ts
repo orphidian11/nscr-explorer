@@ -1,5 +1,7 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import { createWalkController } from './walk'
+import type { WalkController } from './walk'
 
 export type CameraPresetName = 'orbit' | 'walk' | 'top'
 
@@ -26,6 +28,7 @@ export interface ViewerScene {
   camera: THREE.PerspectiveCamera
   renderer: THREE.WebGLRenderer
   controls: OrbitControls
+  walk: WalkController
   applyPreset: (name: CameraPresetName) => void
   /** Recompute the presets so they frame the given bounds, then apply 'orbit'. */
   fitCameraTo: (box: THREE.Box3) => void
@@ -112,12 +115,23 @@ export function createViewerScene(container: HTMLElement): ViewerScene {
   const resizeObserver = new ResizeObserver(resize)
   resizeObserver.observe(container)
 
-  renderer.setAnimationLoop(() => {
+  const walk = createWalkController(camera, renderer.domElement, controls)
+
+  renderer.setAnimationLoop((time) => {
+    const last = (renderer as unknown as { __lastFrameTime?: number }).__lastFrameTime
+    const dt = last === undefined ? 0 : Math.min((time - last) / 1000, 0.1)
+    ;(renderer as unknown as { __lastFrameTime?: number }).__lastFrameTime = time
+    walk.update(dt)
     controls.update()
     renderer.render(scene, camera)
   })
 
   const applyPreset = (name: CameraPresetName): void => {
+    if (name === 'walk') {
+      walk.enter()
+      return
+    }
+    walk.exit()
     const preset = activePresets[name]
     camera.position.set(...preset.position)
     controls.target.set(...preset.target)
@@ -166,9 +180,10 @@ export function createViewerScene(container: HTMLElement): ViewerScene {
     renderer.setAnimationLoop(null)
     resizeObserver.disconnect()
     controls.dispose()
+    walk.dispose()
     renderer.dispose()
     renderer.domElement.remove()
   }
 
-  return { scene, camera, renderer, controls, applyPreset, fitCameraTo, setGridVisible, dispose }
+  return { scene, camera, renderer, controls, walk, applyPreset, fitCameraTo, setGridVisible, dispose }
 }

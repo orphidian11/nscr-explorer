@@ -40902,6 +40902,9500 @@
      "src": "viaduct.json twin pier column, 40 m spacing (CAD pier markers)"
     }
    }
+  ],
+  "beams": [
+   {
+    "kind": "box",
+    "size": [
+     36.7,
+     0.8,
+     0.62
+    ],
+    "pos": [
+     50.54,
+     10.15,
+     85.81
+    ],
+    "rotY": -2.665,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.62
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     8.75,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     29.55,
+     10.15,
+     96.45
+    ],
+    "rotY": -2.6669,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     46.46,
+     0.8,
+     0.43
+    ],
+    "pos": [
+     45.11,
+     10.15,
+     85.49
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.43
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     6.1,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     57.61,
+     10.15,
+     77.93
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     46.46,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     44.02,
+     10.15,
+     83.39
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     17.6,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     44.21,
+     10.15,
+     80.11
+    ],
+    "rotY": -2.6664,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.46
+    ],
+    "pos": [
+     42.7,
+     10.15,
+     78.03
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.46
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     26.26,
+     0.8,
+     0.93
+    ],
+    "pos": [
+     49.18,
+     10.15,
+     71.79
+    ],
+    "rotY": -2.6669,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.93
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     24.25,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     33.24,
+     10.15,
+     80.04
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     39.85,
+     10.15,
+     72.52
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     38.62,
+     10.15,
+     70.12
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     17.85,
+     0.8,
+     0.93
+    ],
+    "pos": [
+     48.35,
+     10.15,
+     60.99
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.93
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     24.25,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     28.65,
+     10.15,
+     71.15
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     35.35,
+     10.15,
+     63.78
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     33.96,
+     10.15,
+     61.09
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     26.26,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     40.02,
+     10.15,
+     54.03
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     16.44,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     20.6,
+     10.15,
+     64.05
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     24.85,
+     0.8,
+     0.46
+    ],
+    "pos": [
+     22.3,
+     10.15,
+     59.26
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.46
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     11.7,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     45.08,
+     10.15,
+     47.52
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     19.26,
+     10.15,
+     59.14
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     35.92,
+     10.15,
+     50.55
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     24.85,
+     0.8,
+     0.46
+    ],
+    "pos": [
+     20.91,
+     10.15,
+     56.56
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.46
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     11.7,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     43.69,
+     10.15,
+     44.82
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     17.93,
+     10.15,
+     56.56
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     34.6,
+     10.15,
+     47.97
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.2,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     27.92,
+     10.15,
+     49.03
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     3.43,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     24.01,
+     10.15,
+     47.9
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     24.85,
+     0.8,
+     0.43
+    ],
+    "pos": [
+     17.73,
+     10.15,
+     50.4
+    ],
+    "rotY": -2.6676,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.43
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     11.7,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     40.49,
+     10.15,
+     38.63
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     31.63,
+     10.15,
+     42.22
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     24.85,
+     0.8,
+     0.46
+    ],
+    "pos": [
+     16.33,
+     10.15,
+     47.68
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.46
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     11.7,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     39.1,
+     10.15,
+     35.93
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     17.85,
+     0.8,
+     0.93
+    ],
+    "pos": [
+     34.6,
+     10.15,
+     34.33
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.93
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     24.25,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     14.9,
+     10.15,
+     44.48
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     21.52,
+     10.15,
+     36.96
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.4,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     9.9,
+     10.15,
+     40.93
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.4,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     26.58,
+     10.15,
+     32.48
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     24.8,
+     0.8,
+     0.46
+    ],
+    "pos": [
+     11.78,
+     10.15,
+     38.92
+    ],
+    "rotY": -2.6635,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.46
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     11.7,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     34.59,
+     10.15,
+     27.19
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     44.51,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     18.18,
+     10.15,
+     31.57
+    ],
+    "rotY": -2.6938,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     16.85,
+     10.15,
+     27.9
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.4,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     22.12,
+     10.15,
+     23.83
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.4,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     5.5,
+     10.15,
+     32.4
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     24.8,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     7.06,
+     10.15,
+     29.75
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     18.1,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     27.01,
+     10.15,
+     19.46
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.2,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     14.17,
+     10.15,
+     22.36
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.47
+    ],
+    "pos": [
+     12.44,
+     10.15,
+     19.34
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.47
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     24.8,
+     0.8,
+     0.46
+    ],
+    "pos": [
+     2.56,
+     10.15,
+     21.02
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.46
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     11.7,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     25.35,
+     10.15,
+     9.27
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.4,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -0.2,
+     10.15,
+     21.34
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.4,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     16.43,
+     10.15,
+     12.79
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     22.33,
+     0.8,
+     0.93
+    ],
+    "pos": [
+     18.86,
+     10.15,
+     8.69
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.93
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     20.37,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -0.57,
+     10.15,
+     18.71
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     7.85,
+     10.15,
+     10.45
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     6.46,
+     10.15,
+     7.76
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     30.15,
+     0.8,
+     0.94
+    ],
+    "pos": [
+     10.8,
+     10.15,
+     1.6
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.94
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     11.95,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -8.89,
+     10.15,
+     11.75
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     3.19,
+     10.15,
+     1.41
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     1.95,
+     10.15,
+     -0.99
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     24.25,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -8.0,
+     10.15,
+     0.04
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     17.85,
+     0.8,
+     0.93
+    ],
+    "pos": [
+     11.68,
+     10.15,
+     -10.11
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.93
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     -1.31,
+     10.15,
+     -7.32
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     -2.7,
+     10.15,
+     -10.02
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     30.15,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     1.66,
+     10.15,
+     -16.11
+    ],
+    "rotY": -2.6702,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     -5.9,
+     10.15,
+     -16.21
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.4,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -0.86,
+     10.15,
+     -20.75
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.4,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -17.63,
+     10.15,
+     -12.45
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     -7.29,
+     10.15,
+     -18.91
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.4,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -19.42,
+     10.15,
+     -15.93
+    ],
+    "rotY": -2.6656,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.4,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -2.8,
+     10.15,
+     -24.5
+    ],
+    "rotY": -2.6656,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     22.33,
+     0.8,
+     0.93
+    ],
+    "pos": [
+     0.53,
+     10.15,
+     -26.86
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.93
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     20.37,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -18.9,
+     10.15,
+     -16.84
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     24.8,
+     0.8,
+     0.46
+    ],
+    "pos": [
+     -18.88,
+     10.15,
+     -20.54
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.46
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     11.7,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     3.92,
+     10.15,
+     -32.3
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     -11.69,
+     10.15,
+     -27.44
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.32,
+     0.8,
+     1.2
+    ],
+    "pos": [
+     -13.37,
+     10.15,
+     -30.92
+    ],
+    "rotY": -2.6436,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.2
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     24.8,
+     0.8,
+     0.46
+    ],
+    "pos": [
+     -23.62,
+     10.15,
+     -29.74
+    ],
+    "rotY": -2.6675,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.46
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     11.7,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -0.83,
+     10.15,
+     -41.52
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.4,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -26.34,
+     10.15,
+     -29.35
+    ],
+    "rotY": -2.6653,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.4,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -9.72,
+     10.15,
+     -37.92
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     -16.38,
+     10.15,
+     -36.54
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     30.15,
+     0.8,
+     0.94
+    ],
+    "pos": [
+     -12.11,
+     10.15,
+     -42.84
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.94
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     11.95,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -31.81,
+     10.15,
+     -32.69
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.43
+    ],
+    "pos": [
+     -19.67,
+     10.15,
+     -42.93
+    ],
+    "rotY": -2.6683,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.43
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.47
+    ],
+    "pos": [
+     -21.04,
+     10.15,
+     -45.57
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.47
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     3.43,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -23.62,
+     10.15,
+     -44.48
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -32.88,
+     10.15,
+     -41.97
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -16.21,
+     10.15,
+     -50.57
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.2,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -22.5,
+     10.15,
+     -48.74
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.47
+    ],
+    "pos": [
+     -24.23,
+     10.15,
+     -51.76
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.47
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     11.7,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -11.31,
+     10.15,
+     -61.84
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     24.85,
+     0.8,
+     0.46
+    ],
+    "pos": [
+     -34.08,
+     10.15,
+     -50.09
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.46
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     30.65,
+     0.8,
+     1.06
+    ],
+    "pos": [
+     -32.65,
+     10.15,
+     -54.74
+    ],
+    "rotY": -2.6664,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.06
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     17.85,
+     0.8,
+     0.93
+    ],
+    "pos": [
+     -15.81,
+     10.15,
+     -63.44
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.93
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     -28.81,
+     10.15,
+     -60.65
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     -30.2,
+     10.15,
+     -63.35
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.2,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -31.66,
+     10.15,
+     -66.52
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.44
+    ],
+    "pos": [
+     -33.47,
+     10.15,
+     -69.69
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.44
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     12.5,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -48.66,
+     10.15,
+     -64.9
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     18.1,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -23.25,
+     10.15,
+     -78.0
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     30.15,
+     0.8,
+     0.94
+    ],
+    "pos": [
+     -30.45,
+     10.15,
+     -78.4
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.94
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     11.95,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -50.14,
+     10.15,
+     -68.24
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     43.9,
+     0.8,
+     0.46
+    ],
+    "pos": [
+     -37.54,
+     10.15,
+     -77.58
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.46
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     4.8,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -22.35,
+     10.15,
+     -90.78
+    ],
+    "rotY": -2.6655,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     18.0,
+     0.8,
+     0.7
+    ],
+    "pos": [
+     -29.45,
+     10.15,
+     -89.71
+    ],
+    "rotY": -2.66,
+    "meta": {
+     "src": "framing.json GL +9.750 transverse",
+     "width_m": 0.7
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     62.0,
+     10.15,
+     67.51
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     59.7,
+     10.15,
+     62.95
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     57.4,
+     10.15,
+     58.39
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     55.1,
+     10.15,
+     53.84
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     52.79,
+     10.15,
+     49.28
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     50.49,
+     10.15,
+     44.72
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     48.19,
+     10.15,
+     40.17
+    ],
+    "rotY": 2.0397,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     45.86,
+     10.15,
+     35.62
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     43.52,
+     10.15,
+     31.08
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     41.18,
+     10.15,
+     26.54
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     38.84,
+     10.15,
+     22.01
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     36.5,
+     10.15,
+     17.47
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     34.16,
+     10.15,
+     12.93
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     31.82,
+     10.15,
+     8.39
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     29.48,
+     10.15,
+     3.85
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     27.14,
+     10.15,
+     -0.68
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     24.8,
+     10.15,
+     -5.22
+    ],
+    "rotY": 2.0485,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     22.45,
+     10.15,
+     -9.75
+    ],
+    "rotY": 2.05,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     20.1,
+     10.15,
+     -14.28
+    ],
+    "rotY": 2.05,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     17.74,
+     10.15,
+     -18.81
+    ],
+    "rotY": 2.05,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     15.39,
+     10.15,
+     -23.35
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     13.06,
+     10.15,
+     -27.89
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     10.74,
+     10.15,
+     -32.44
+    ],
+    "rotY": 2.0433,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     8.42,
+     10.15,
+     -36.98
+    ],
+    "rotY": 2.044,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     6.08,
+     10.15,
+     -41.52
+    ],
+    "rotY": 2.0462,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     3.75,
+     10.15,
+     -46.06
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     1.41,
+     10.15,
+     -50.6
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     -0.93,
+     10.15,
+     -55.14
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     -3.27,
+     10.15,
+     -59.68
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     -5.61,
+     10.15,
+     -64.22
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     -7.95,
+     10.15,
+     -68.75
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     -10.29,
+     10.15,
+     -73.29
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     -12.63,
+     10.15,
+     -77.83
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     -14.97,
+     10.15,
+     -82.37
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     -17.31,
+     10.15,
+     -86.91
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.6
+    ],
+    "pos": [
+     -19.65,
+     10.15,
+     -91.44
+    ],
+    "rotY": 2.0471,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.6
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     35.08,
+     10.15,
+     26.85
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     32.73,
+     10.15,
+     22.27
+    ],
+    "rotY": 2.045,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     30.38,
+     10.15,
+     17.7
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     28.02,
+     10.15,
+     13.13
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     25.66,
+     10.15,
+     8.56
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     23.31,
+     10.15,
+     3.98
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     20.95,
+     10.15,
+     -0.59
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     18.59,
+     10.15,
+     -5.16
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     16.24,
+     10.15,
+     -9.73
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     13.88,
+     10.15,
+     -14.3
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     11.52,
+     10.15,
+     -18.87
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     9.16,
+     10.15,
+     -23.45
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     6.81,
+     10.15,
+     -28.02
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     4.45,
+     10.15,
+     -32.59
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     2.09,
+     10.15,
+     -37.16
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     -0.27,
+     10.15,
+     -41.73
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     61.0,
+     10.15,
+     77.03
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     58.65,
+     10.15,
+     72.49
+    ],
+    "rotY": 2.0542,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     56.29,
+     10.15,
+     67.96
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     53.95,
+     10.15,
+     63.42
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     51.61,
+     10.15,
+     58.88
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     49.27,
+     10.15,
+     54.34
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     46.93,
+     10.15,
+     49.8
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     44.59,
+     10.15,
+     45.26
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     42.25,
+     10.15,
+     40.72
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     39.91,
+     10.15,
+     36.18
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     37.57,
+     10.15,
+     31.64
+    ],
+    "rotY": 2.0466,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     35.23,
+     10.15,
+     27.09
+    ],
+    "rotY": 2.0429,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.08,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     -2.83,
+     10.15,
+     -46.62
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.08,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     -5.13,
+     10.15,
+     -51.15
+    ],
+    "rotY": 2.0433,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.08,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     -7.44,
+     10.15,
+     -55.67
+    ],
+    "rotY": 2.0445,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.08,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     -9.76,
+     10.15,
+     -60.19
+    ],
+    "rotY": 2.0434,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.08,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     -12.07,
+     10.15,
+     -64.72
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.08,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     -14.38,
+     10.15,
+     -69.25
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.08,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     -16.69,
+     10.15,
+     -73.77
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.08,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     -19.0,
+     10.15,
+     -78.3
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.08,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     -21.31,
+     10.15,
+     -82.83
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.08,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     -23.63,
+     10.15,
+     -87.35
+    ],
+    "rotY": 2.0443,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.08,
+     0.8,
+     0.9
+    ],
+    "pos": [
+     -25.92,
+     10.15,
+     -91.88
+    ],
+    "rotY": 2.0343,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.9
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     54.85,
+     10.15,
+     80.44
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     52.57,
+     10.15,
+     75.92
+    ],
+    "rotY": 2.0416,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     50.26,
+     10.15,
+     71.42
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     47.94,
+     10.15,
+     66.92
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     45.62,
+     10.15,
+     62.42
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     43.3,
+     10.15,
+     57.92
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     40.98,
+     10.15,
+     53.42
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     38.66,
+     10.15,
+     48.92
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     36.34,
+     10.15,
+     44.42
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     34.02,
+     10.15,
+     39.92
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     31.7,
+     10.15,
+     35.42
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     29.38,
+     10.15,
+     30.92
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     27.06,
+     10.15,
+     26.42
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     24.74,
+     10.15,
+     21.93
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     22.42,
+     10.15,
+     17.43
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     20.1,
+     10.15,
+     12.93
+    ],
+    "rotY": 2.047,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     17.78,
+     10.15,
+     8.43
+    ],
+    "rotY": 2.0467,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     15.46,
+     10.15,
+     3.93
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     13.14,
+     10.15,
+     -0.57
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     10.82,
+     10.15,
+     -5.07
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     8.5,
+     10.15,
+     -9.57
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     6.18,
+     10.15,
+     -14.07
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     3.86,
+     10.15,
+     -18.57
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     1.54,
+     10.15,
+     -23.07
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -0.8,
+     10.15,
+     -27.55
+    ],
+    "rotY": 2.0574,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -3.14,
+     10.15,
+     -32.05
+    ],
+    "rotY": 2.0426,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -5.44,
+     10.15,
+     -36.56
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -7.75,
+     10.15,
+     -41.06
+    ],
+    "rotY": 2.0447,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -10.06,
+     10.15,
+     -45.56
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -12.38,
+     10.15,
+     -50.06
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -14.7,
+     10.15,
+     -54.56
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -17.02,
+     10.15,
+     -59.06
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -19.34,
+     10.15,
+     -63.56
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -21.66,
+     10.15,
+     -68.06
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -23.98,
+     10.15,
+     -72.56
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -26.3,
+     10.15,
+     -77.06
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.06,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -28.62,
+     10.15,
+     -81.56
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     36.54,
+     10.15,
+     47.01
+    ],
+    "rotY": 2.0423,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     34.16,
+     10.15,
+     42.38
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     31.78,
+     10.15,
+     37.74
+    ],
+    "rotY": 2.0447,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     29.41,
+     10.15,
+     33.1
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     27.06,
+     10.15,
+     28.45
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     24.71,
+     10.15,
+     23.8
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     6.86,
+     0.8,
+     0.56
+    ],
+    "pos": [
+     -31.85,
+     10.15,
+     -87.83
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.56
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.09,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     16.53,
+     10.15,
+     9.6
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.37,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     39.57,
+     10.15,
+     54.95
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.37,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     37.15,
+     10.15,
+     50.17
+    ],
+    "rotY": 2.0336,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.37,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     34.74,
+     10.15,
+     45.37
+    ],
+    "rotY": 2.0399,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.37,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     32.3,
+     10.15,
+     40.59
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.37,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     29.88,
+     10.15,
+     35.8
+    ],
+    "rotY": 2.0354,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.37,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     27.47,
+     10.15,
+     31.01
+    ],
+    "rotY": 2.039,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     7.17,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -3.34,
+     10.15,
+     -28.82
+    ],
+    "rotY": 2.0455,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     7.17,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -6.59,
+     10.15,
+     -35.22
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.83,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -18.5,
+     10.15,
+     -58.22
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     8.05,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -13.18,
+     10.15,
+     -47.38
+    ],
+    "rotY": 2.0468,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.47
+    ],
+    "pos": [
+     36.19,
+     10.15,
+     56.51
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.47
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.47
+    ],
+    "pos": [
+     33.6,
+     10.15,
+     51.45
+    ],
+    "rotY": 2.0448,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.47
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.47
+    ],
+    "pos": [
+     31.0,
+     10.15,
+     46.4
+    ],
+    "rotY": 2.0468,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.47
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.47
+    ],
+    "pos": [
+     28.4,
+     10.15,
+     41.35
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.47
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.47
+    ],
+    "pos": [
+     25.81,
+     10.15,
+     36.29
+    ],
+    "rotY": 2.039,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.47
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.47
+    ],
+    "pos": [
+     23.24,
+     10.15,
+     31.22
+    ],
+    "rotY": 2.0435,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.47
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.47
+    ],
+    "pos": [
+     20.66,
+     10.15,
+     26.16
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.47
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.1,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     49.2,
+     10.15,
+     83.34
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.1,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     46.86,
+     10.15,
+     78.8
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.1,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     44.52,
+     10.15,
+     74.26
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.1,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     42.19,
+     10.15,
+     69.73
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.1,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     39.85,
+     10.15,
+     65.19
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.1,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     37.51,
+     10.15,
+     60.65
+    ],
+    "rotY": 2.0451,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.1,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     35.19,
+     10.15,
+     56.1
+    ],
+    "rotY": 2.0388,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.1,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     32.88,
+     10.15,
+     51.55
+    ],
+    "rotY": 2.0415,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.1,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     30.58,
+     10.15,
+     47.0
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.1,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     28.27,
+     10.15,
+     42.44
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.1,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     25.97,
+     10.15,
+     37.88
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.32,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     17.8,
+     10.15,
+     20.99
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.32,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     15.4,
+     10.15,
+     16.25
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.32,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     12.98,
+     10.15,
+     11.51
+    ],
+    "rotY": 2.0464,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.32,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     10.56,
+     10.15,
+     6.77
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.32,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     8.17,
+     10.15,
+     2.02
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.32,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     5.77,
+     10.15,
+     -2.73
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.32,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     3.37,
+     10.15,
+     -7.47
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.32,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     0.97,
+     10.15,
+     -12.22
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     5.48,
+     10.15,
+     -2.83
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     3.19,
+     10.15,
+     -7.31
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     0.9,
+     10.15,
+     -11.8
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -1.39,
+     10.15,
+     -16.28
+    ],
+    "rotY": 2.0428,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -3.68,
+     10.15,
+     -20.77
+    ],
+    "rotY": 2.0432,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -5.97,
+     10.15,
+     -25.25
+    ],
+    "rotY": 2.0449,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -8.26,
+     10.15,
+     -29.74
+    ],
+    "rotY": 2.0381,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -10.53,
+     10.15,
+     -34.23
+    ],
+    "rotY": 2.0417,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -12.85,
+     10.15,
+     -38.7
+    ],
+    "rotY": 2.0546,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -15.18,
+     10.15,
+     -43.17
+    ],
+    "rotY": 2.0489,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -17.49,
+     10.15,
+     -47.64
+    ],
+    "rotY": 2.0468,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -19.8,
+     10.15,
+     -52.12
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -22.11,
+     10.15,
+     -56.59
+    ],
+    "rotY": 2.0471,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -24.4,
+     10.15,
+     -61.08
+    ],
+    "rotY": 2.0389,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -26.67,
+     10.15,
+     -65.57
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -28.94,
+     10.15,
+     -70.07
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -31.21,
+     10.15,
+     -74.56
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.04,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -33.48,
+     10.15,
+     -79.06
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.13,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -22.64,
+     10.15,
+     -55.74
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.13,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -24.96,
+     10.15,
+     -60.32
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.13,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -27.27,
+     10.15,
+     -64.9
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.13,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -29.59,
+     10.15,
+     -69.47
+    ],
+    "rotY": 2.0433,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.13,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -31.91,
+     10.15,
+     -74.04
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.13,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -34.23,
+     10.15,
+     -78.62
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.3,
+     0.8,
+     0.56
+    ],
+    "pos": [
+     -33.0,
+     10.15,
+     -76.19
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.56
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.3,
+     0.8,
+     0.56
+    ],
+    "pos": [
+     -35.39,
+     10.15,
+     -80.92
+    ],
+    "rotY": 2.041,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.56
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.3,
+     0.8,
+     0.56
+    ],
+    "pos": [
+     -37.79,
+     10.15,
+     -85.65
+    ],
+    "rotY": 2.0374,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.56
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     2.26,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     46.14,
+     10.15,
+     86.51
+    ],
+    "rotY": 2.0468,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     2.74,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     9.57,
+     10.15,
+     15.59
+    ],
+    "rotY": 2.0468,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     44.2,
+     10.15,
+     82.8
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     41.87,
+     10.15,
+     78.25
+    ],
+    "rotY": 2.0463,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     39.53,
+     10.15,
+     73.7
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     37.19,
+     10.15,
+     69.15
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     34.84,
+     10.15,
+     64.61
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     32.5,
+     10.15,
+     60.06
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     30.16,
+     10.15,
+     55.52
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     27.81,
+     10.15,
+     50.97
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     25.47,
+     10.15,
+     46.43
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     23.13,
+     10.15,
+     41.88
+    ],
+    "rotY": 2.0456,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     20.8,
+     10.15,
+     37.33
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     18.47,
+     10.15,
+     32.78
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     16.15,
+     10.15,
+     28.22
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     19.44,
+     10.15,
+     34.92
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     17.12,
+     10.15,
+     30.33
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     14.79,
+     10.15,
+     25.74
+    ],
+    "rotY": 2.0423,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     12.44,
+     10.15,
+     21.16
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     10.08,
+     10.15,
+     16.59
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     7.73,
+     10.15,
+     12.02
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     5.37,
+     10.15,
+     7.45
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     3.01,
+     10.15,
+     2.88
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     0.65,
+     10.15,
+     -1.7
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -1.7,
+     10.15,
+     -6.27
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -4.06,
+     10.15,
+     -10.84
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -6.42,
+     10.15,
+     -15.41
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -8.77,
+     10.15,
+     -19.98
+    ],
+    "rotY": 2.0449,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -11.1,
+     10.15,
+     -24.57
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -13.42,
+     10.15,
+     -29.16
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -15.74,
+     10.15,
+     -33.75
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -11.19,
+     10.15,
+     -24.39
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -13.62,
+     10.15,
+     -29.16
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -16.05,
+     10.15,
+     -33.92
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -18.49,
+     10.15,
+     -38.69
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -20.92,
+     10.15,
+     -43.45
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -23.35,
+     10.15,
+     -48.22
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -25.79,
+     10.15,
+     -52.98
+    ],
+    "rotY": 2.046,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -28.24,
+     10.15,
+     -57.73
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -30.69,
+     10.15,
+     -62.49
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -33.14,
+     10.15,
+     -67.25
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -35.6,
+     10.15,
+     -72.0
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.35,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -38.05,
+     10.15,
+     -76.76
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     40.72,
+     10.15,
+     84.6
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     38.38,
+     10.15,
+     80.05
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     36.04,
+     10.15,
+     75.51
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     33.69,
+     10.15,
+     70.96
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     31.35,
+     10.15,
+     66.41
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     29.0,
+     10.15,
+     61.87
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     26.66,
+     10.15,
+     57.32
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     24.32,
+     10.15,
+     52.78
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     21.97,
+     10.15,
+     48.23
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     19.63,
+     10.15,
+     43.68
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     17.29,
+     10.15,
+     39.14
+    ],
+    "rotY": 2.0445,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     14.96,
+     10.15,
+     34.58
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.11,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     12.64,
+     10.15,
+     30.03
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     2.26,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     42.64,
+     10.15,
+     88.32
+    ],
+    "rotY": 2.0468,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     2.74,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     6.07,
+     10.15,
+     17.39
+    ],
+    "rotY": 2.0468,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     16.01,
+     10.15,
+     36.75
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     13.72,
+     10.15,
+     32.27
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     11.43,
+     10.15,
+     27.79
+    ],
+    "rotY": 2.0444,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     9.13,
+     10.15,
+     23.32
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     6.82,
+     10.15,
+     18.84
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     4.51,
+     10.15,
+     14.37
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     2.21,
+     10.15,
+     9.9
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -0.1,
+     10.15,
+     5.42
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -2.41,
+     10.15,
+     0.95
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -4.71,
+     10.15,
+     -3.52
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -7.02,
+     10.15,
+     -8.0
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -9.33,
+     10.15,
+     -12.47
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -11.63,
+     10.15,
+     -16.94
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -13.97,
+     10.15,
+     -21.4
+    ],
+    "rotY": 2.0609,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -16.31,
+     10.15,
+     -25.86
+    ],
+    "rotY": 2.0468,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -18.6,
+     10.15,
+     -30.34
+    ],
+    "rotY": 2.0419,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -20.91,
+     10.15,
+     -34.81
+    ],
+    "rotY": 2.0497,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -23.21,
+     10.15,
+     -39.29
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -25.5,
+     10.15,
+     -43.77
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -27.79,
+     10.15,
+     -48.25
+    ],
+    "rotY": 2.0434,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -30.09,
+     10.15,
+     -52.73
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -32.39,
+     10.15,
+     -57.2
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -34.7,
+     10.15,
+     -61.68
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -37.0,
+     10.15,
+     -66.15
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -39.31,
+     10.15,
+     -70.62
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -41.62,
+     10.15,
+     -75.1
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.23,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     38.24,
+     10.15,
+     88.92
+    ],
+    "rotY": 2.0468,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.23,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     35.85,
+     10.15,
+     84.28
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.23,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     33.45,
+     10.15,
+     79.63
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.23,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     31.06,
+     10.15,
+     74.99
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.23,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     28.66,
+     10.15,
+     70.34
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.23,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     26.27,
+     10.15,
+     65.7
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.23,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     23.85,
+     10.15,
+     61.07
+    ],
+    "rotY": 2.0564,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.23,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     21.45,
+     10.15,
+     56.42
+    ],
+    "rotY": 2.0401,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.23,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     19.09,
+     10.15,
+     51.76
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.23,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     16.74,
+     10.15,
+     47.1
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     23.93,
+     10.15,
+     62.84
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     21.34,
+     10.15,
+     57.79
+    ],
+    "rotY": 2.045,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     18.75,
+     10.15,
+     52.74
+    ],
+    "rotY": 2.0458,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     16.17,
+     10.15,
+     47.68
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     13.61,
+     10.15,
+     42.62
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     11.05,
+     10.15,
+     37.55
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     8.49,
+     10.15,
+     32.48
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     12.02,
+     10.15,
+     38.74
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     9.7,
+     10.15,
+     34.15
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     7.38,
+     10.15,
+     29.56
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     5.06,
+     10.15,
+     24.97
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     2.74,
+     10.15,
+     20.37
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     0.42,
+     10.15,
+     15.78
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -1.9,
+     10.15,
+     11.19
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -4.22,
+     10.15,
+     6.6
+    ],
+    "rotY": 2.0404,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -6.56,
+     10.15,
+     2.02
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -8.92,
+     10.15,
+     -2.55
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -11.28,
+     10.15,
+     -7.12
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -13.63,
+     10.15,
+     -11.69
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -15.99,
+     10.15,
+     -16.26
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -18.35,
+     10.15,
+     -20.83
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -20.69,
+     10.15,
+     -25.42
+    ],
+    "rotY": 2.0386,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -23.01,
+     10.15,
+     -30.01
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.33,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     5.59,
+     10.15,
+     27.33
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.33,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     3.19,
+     10.15,
+     22.58
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.33,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     0.77,
+     10.15,
+     17.84
+    ],
+    "rotY": 2.0465,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.33,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -1.65,
+     10.15,
+     13.09
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.33,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -4.05,
+     10.15,
+     8.34
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.33,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -6.45,
+     10.15,
+     3.59
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.33,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -8.85,
+     10.15,
+     -1.17
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.33,
+     0.8,
+     0.45
+    ],
+    "pos": [
+     -11.25,
+     10.15,
+     -5.92
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.45
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.49,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -27.72,
+     10.15,
+     -38.51
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.49,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -30.2,
+     10.15,
+     -43.42
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.49,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -32.67,
+     10.15,
+     -48.32
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.49,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -35.15,
+     10.15,
+     -53.22
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.49,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -37.63,
+     10.15,
+     -58.13
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.49,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -40.11,
+     10.15,
+     -63.02
+    ],
+    "rotY": 2.043,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.49,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -42.62,
+     10.15,
+     -67.91
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.49,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     -45.14,
+     10.15,
+     -72.79
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -15.98,
+     10.15,
+     -14.17
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -18.33,
+     10.15,
+     -18.81
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -20.68,
+     10.15,
+     -23.46
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -23.02,
+     10.15,
+     -28.11
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -25.37,
+     10.15,
+     -32.75
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -27.73,
+     10.15,
+     -37.39
+    ],
+    "rotY": 2.0457,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -30.12,
+     10.15,
+     -42.02
+    ],
+    "rotY": 2.047,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -32.5,
+     10.15,
+     -46.65
+    ],
+    "rotY": 2.0468,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -34.88,
+     10.15,
+     -51.28
+    ],
+    "rotY": 2.0451,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -37.25,
+     10.15,
+     -55.92
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -39.59,
+     10.15,
+     -60.56
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -41.94,
+     10.15,
+     -65.21
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.37,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     20.55,
+     10.15,
+     64.76
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.37,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     18.12,
+     10.15,
+     59.98
+    ],
+    "rotY": 2.0373,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.37,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     15.75,
+     10.15,
+     55.16
+    ],
+    "rotY": 2.0181,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.37,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     13.37,
+     10.15,
+     50.35
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.37,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     10.95,
+     10.15,
+     45.56
+    ],
+    "rotY": 2.0356,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.37,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     8.53,
+     10.15,
+     40.78
+    ],
+    "rotY": 2.0414,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.2,
+     0.8,
+     1.15
+    ],
+    "pos": [
+     16.04,
+     10.15,
+     57.59
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.15
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.2,
+     0.8,
+     1.15
+    ],
+    "pos": [
+     13.69,
+     10.15,
+     52.95
+    ],
+    "rotY": 2.0417,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.15
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.2,
+     0.8,
+     1.15
+    ],
+    "pos": [
+     11.32,
+     10.15,
+     48.32
+    ],
+    "rotY": 2.0447,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.15
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.2,
+     0.8,
+     1.15
+    ],
+    "pos": [
+     8.96,
+     10.15,
+     43.68
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.15
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.2,
+     0.8,
+     1.15
+    ],
+    "pos": [
+     6.62,
+     10.15,
+     39.04
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.15
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.2,
+     0.8,
+     1.15
+    ],
+    "pos": [
+     4.27,
+     10.15,
+     34.4
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.15
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -27.17,
+     10.15,
+     -28.27
+    ],
+    "rotY": 2.0479,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -29.79,
+     10.15,
+     -33.31
+    ],
+    "rotY": 2.0512,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -32.39,
+     10.15,
+     -38.35
+    ],
+    "rotY": 2.0451,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -35.02,
+     10.15,
+     -43.39
+    ],
+    "rotY": 2.0556,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.68,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -37.64,
+     10.15,
+     -48.43
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.07,
+     0.8,
+     0.5
+    ],
+    "pos": [
+     -2.81,
+     10.15,
+     19.56
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.96,
+     0.8,
+     0.4
+    ],
+    "pos": [
+     -22.3,
+     10.15,
+     -18.36
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.4
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.2,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     32.37,
+     10.15,
+     91.74
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.2,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     30.02,
+     10.15,
+     87.09
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.2,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     27.67,
+     10.15,
+     82.45
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.2,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     25.31,
+     10.15,
+     77.81
+    ],
+    "rotY": 2.0455,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     22.93,
+     10.15,
+     73.18
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     20.54,
+     10.15,
+     68.55
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.21,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     18.16,
+     10.15,
+     63.93
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.2,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     15.79,
+     10.15,
+     59.29
+    ],
+    "rotY": 2.04,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.2,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     13.44,
+     10.15,
+     54.65
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.2,
+     0.8,
+     1.0
+    ],
+    "pos": [
+     11.09,
+     10.15,
+     50.0
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.0
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     6.52,
+     10.15,
+     41.65
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     4.26,
+     10.15,
+     37.16
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     1.99,
+     10.15,
+     32.68
+    ],
+    "rotY": 2.0403,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -0.29,
+     10.15,
+     28.2
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -2.58,
+     10.15,
+     23.73
+    ],
+    "rotY": 2.0445,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -4.87,
+     10.15,
+     19.25
+    ],
+    "rotY": 2.0431,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -7.15,
+     10.15,
+     14.78
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -9.47,
+     10.15,
+     10.32
+    ],
+    "rotY": 2.0548,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -11.75,
+     10.15,
+     5.84
+    ],
+    "rotY": 2.0306,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -14.05,
+     10.15,
+     1.37
+    ],
+    "rotY": 2.0631,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -16.34,
+     10.15,
+     -3.1
+    ],
+    "rotY": 2.0223,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -18.64,
+     10.15,
+     -7.57
+    ],
+    "rotY": 2.0714,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -21.0,
+     10.15,
+     -12.01
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -23.3,
+     10.15,
+     -16.47
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -25.6,
+     10.15,
+     -20.94
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -27.91,
+     10.15,
+     -25.41
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -30.2,
+     10.15,
+     -29.88
+    ],
+    "rotY": 2.0443,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.14,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -32.0,
+     10.15,
+     -34.6
+    ],
+    "rotY": 1.828,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -33.8,
+     10.15,
+     -39.32
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -36.08,
+     10.15,
+     -43.8
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -38.37,
+     10.15,
+     -48.27
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -40.65,
+     10.15,
+     -52.75
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -42.94,
+     10.15,
+     -57.22
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -45.22,
+     10.15,
+     -61.7
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.19,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -48.07,
+     10.15,
+     -65.89
+    ],
+    "rotY": 2.291,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.03,
+     0.8,
+     1.27
+    ],
+    "pos": [
+     -50.94,
+     10.15,
+     -70.07
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 1.27
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     7.0,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     25.97,
+     10.15,
+     94.03
+    ],
+    "rotY": 2.0467,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.31,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     22.47,
+     10.15,
+     87.56
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.31,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     20.03,
+     10.15,
+     82.84
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.31,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     17.6,
+     10.15,
+     78.12
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.31,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     15.17,
+     10.15,
+     73.4
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.31,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     12.73,
+     10.15,
+     68.68
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.31,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     10.3,
+     10.15,
+     63.96
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.31,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     7.86,
+     10.15,
+     59.24
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.31,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     5.43,
+     10.15,
+     54.52
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.31,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     3.0,
+     10.15,
+     49.8
+    ],
+    "rotY": 2.0437,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.31,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     0.59,
+     10.15,
+     45.07
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     0.34,
+     10.15,
+     44.83
+    ],
+    "rotY": 2.0385,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -1.93,
+     10.15,
+     40.35
+    ],
+    "rotY": 2.0407,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -4.2,
+     10.15,
+     35.88
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -6.49,
+     10.15,
+     31.41
+    ],
+    "rotY": 2.0455,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -8.79,
+     10.15,
+     26.94
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -11.08,
+     10.15,
+     22.48
+    ],
+    "rotY": 2.0431,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -13.37,
+     10.15,
+     18.01
+    ],
+    "rotY": 2.0427,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -15.68,
+     10.15,
+     13.55
+    ],
+    "rotY": 2.0548,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -17.99,
+     10.15,
+     9.09
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -20.3,
+     10.15,
+     4.63
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -22.6,
+     10.15,
+     0.17
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -24.9,
+     10.15,
+     -4.29
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -27.2,
+     10.15,
+     -8.76
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -29.5,
+     10.15,
+     -13.22
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -31.8,
+     10.15,
+     -17.68
+    ],
+    "rotY": 2.0477,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -34.11,
+     10.15,
+     -22.14
+    ],
+    "rotY": 2.0489,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -36.41,
+     10.15,
+     -26.61
+    ],
+    "rotY": 2.0442,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -38.7,
+     10.15,
+     -31.07
+    ],
+    "rotY": 2.0468,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -41.0,
+     10.15,
+     -35.53
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -43.31,
+     10.15,
+     -40.0
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -45.61,
+     10.15,
+     -44.46
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -47.91,
+     10.15,
+     -48.92
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -50.21,
+     10.15,
+     -53.38
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -52.51,
+     10.15,
+     -57.85
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -54.81,
+     10.15,
+     -62.31
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     5.02,
+     0.8,
+     0.8
+    ],
+    "pos": [
+     -57.11,
+     10.15,
+     -66.77
+    ],
+    "rotY": 2.0469,
+    "meta": {
+     "src": "framing.json GL +9.750 longitudinal",
+     "width_m": 0.8
+    }
+   }
+  ],
+  "floors": [
+   {
+    "kind": "box",
+    "size": [
+     185.7,
+     0.3,
+     37.7
+    ],
+    "pos": [
+     0.15,
+     0.35,
+     -0.99
+    ],
+    "rotY": 2.0474,
+    "color": "#c9ccd0",
+    "meta": {
+     "src": "wall-segment projection (commuter.json floors)",
+     "name": "ground",
+     "elev": 0.5
+    }
+   },
+   {
+    "kind": "box",
+    "size": [
+     181.4,
+     0.3,
+     38.5
+    ],
+    "pos": [
+     0.02,
+     4.45,
+     1.5
+    ],
+    "rotY": 2.0474,
+    "color": "#d6d9dd",
+    "meta": {
+     "src": "wall-segment projection (commuter.json floors)",
+     "name": "concourse",
+     "elev": 4.6
+    }
+   }
   ]
  }
 }

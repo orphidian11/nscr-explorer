@@ -244,6 +244,10 @@ export interface RealStationManifest {
     viaduct_deck?: RealBoxObject[]
     /** Viaduct twin columns (0.5 m cylinders), ground -> +10.0. */
     viaduct_piers?: RealCylinderObject[]
+    /** Framing beams at the +9.75 level (portal + longitudinal). */
+    beams?: RealBoxObject[]
+    /** Walkable floor slabs (ground +0.50, concourse +4.60). */
+    floors?: RealBoxObject[]
   }
 }
 
@@ -437,6 +441,8 @@ export function buildRealStation(manifest: RealStationManifest): StationModel {
   addLayer('lattice', `Facade lattice (${objects.lattice?.length ?? 0})`, objects.lattice ? [makeInstancedBoxes(objects.lattice, LATTICE_COLOR)] : [])
   addLayer('viaduct_deck', `Viaduct deck (${objects.viaduct_deck?.length ?? 0})`, objects.viaduct_deck ? [makeInstancedBoxes(objects.viaduct_deck, VIADUCT_DECK_COLOR)] : [])
   addLayer('viaduct_piers', `Viaduct piers (${objects.viaduct_piers?.length ?? 0})`, objects.viaduct_piers ? [makeInstancedCylinders(objects.viaduct_piers)] : [])
+  addLayer('beams', `Framing beams (${objects.beams?.length ?? 0})`, objects.beams ? [makeInstancedBoxes(objects.beams, new THREE.Color('#7d838b'))] : [])
+  addLayer('floors', 'Floors (walkable)', asArray(objects.floors).map((obj) => makeSingleBox(obj, new THREE.Color('#c9ccd0'))))
 
   return { name: manifest.name, root, layers, gltfRefs: [] }
 }
