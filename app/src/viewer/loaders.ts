@@ -34,7 +34,8 @@ export async function loadGltf(url: string): Promise<THREE.Group> {
  * CAD-extracted models can be dropped in without code changes.
  */
 export async function loadStation(manifestUrl: string): Promise<StationModel> {
-  const response = await fetch(manifestUrl)
+  // no-store: dev regenerations must never be shadowed by a cached partial body
+  const response = await fetch(manifestUrl, { cache: 'no-store' })
   if (!response.ok) {
     throw new Error(`Failed to load station manifest ${manifestUrl}: HTTP ${response.status}`)
   }
