@@ -86,6 +86,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+.changelog-overlay[hidden] { display: none; }
 
 .changelog-dialog {
   width: min(520px, calc(100vw - 48px));
