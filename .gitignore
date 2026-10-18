@@ -22,3 +22,4 @@ app/dist/
 Thumbs.db
 .DS_Store
 pipeline/oda/
+*.tmp

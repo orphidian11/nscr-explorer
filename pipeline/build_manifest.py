@@ -66,7 +66,7 @@ walls = wall_boxes(SEGS["gf"], 0.50, 4.60) + wall_boxes(SEGS["cc"], 4.60, 11.90)
 # 201 sampled [e,n] pts every 10 m, +/-1000 m along the alignment through Bicutan.
 # Needed before the tracks: the station long axis (and tracks) runs PARALLEL to
 # the alignment (~63 deg in the local XZ frame), not along local x.
-ALX = json.load(open(r"E:\NSCR\pipeline\alignment_extended.json"))
+ALX = json.load(open(r"E:\NSCR\pipeline\alignment_extended_v2.json"))
 al_pts = [(p[0] - E0, -(p[1] - N0)) for p in ALX["points"]
           if p is not None and p[0] is not None and p[1] is not None]  # local x,z, +/-4 km
 assert len(al_pts) == len(ALX["points"]), 'null points in alignment_extended.json'
