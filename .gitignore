@@ -15,6 +15,9 @@ pipeline/wall_segments.json
 app/node_modules/
 app/dist/
 
+# Firebase
+.firebase/
+
 # OS
 Thumbs.db
 .DS_Store
