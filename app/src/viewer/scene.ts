@@ -53,6 +53,19 @@ export function createViewerScene(container: HTMLElement): ViewerScene {
   renderer.toneMapping = THREE.ACESFilmicToneMapping
   container.appendChild(renderer.domElement)
 
+  // OrbitControls calls setPointerCapture on pointerdown; it throws NotFoundError
+  // when the pointer is already gone (fast clicks, focus edges). Capture failure
+  // only affects drag continuation, so degrade gracefully instead of erroring.
+  const proto = Element.prototype as unknown as { setPointerCapture: (...a: unknown[]) => void }
+  const originalCapture = proto.setPointerCapture
+  proto.setPointerCapture = function (...args: unknown[]) {
+    try {
+      originalCapture.apply(this, args)
+    } catch {
+      /* pointer no longer active — ignore */
+    }
+  }
+
   const scene = new THREE.Scene()
   scene.background = new THREE.Color(SKY_COLOR)
   scene.fog = new THREE.Fog(SKY_COLOR, 420, 1500)
