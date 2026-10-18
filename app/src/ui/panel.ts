@@ -16,6 +16,7 @@ export interface PanelCallbacks {
 
 export const STATION_OPTIONS: Array<{ id: string; label: string }> = [
   { id: 'bicutan-real', label: 'Bicutan (CAD, real)' },
+  { id: 'fti-massing', label: 'FTI (JICA massing)' },
   { id: 'bicutan-placeholder', label: 'Bicutan (placeholder)' },
 ]
 

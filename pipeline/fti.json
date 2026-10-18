@@ -1,0 +1,50 @@
+{
+  "type": "E' (per Table 4.4.3 Station Matrix, p.4-387/p501-502: at-grade, 2 tracks, 1 platform, ~2 stories; Type E'=25 m wide variant)",
+  "platform": "island",
+  "levels": 2,
+  "footprint_m": {
+    "length": 140,
+    "width": 25
+  },
+  "center_wgs84": {
+    "lat": 14.504494,
+    "lon": 121.036389,
+    "uncertainty_m": 250
+  },
+  "center_prs92": {
+    "e": 503783.72,
+    "n": 1604155.35
+  },
+  "along_track_distance_m": 2025,
+  "sources": [
+    {
+      "page": 195,
+      "what": "Fig 4.2.56 Detailed Ground Plan at FTI Section: 2 NSRP tracks beneath Skyway & C6 off-ramp, chainage KP 9+200 to KP 9+600, sections A-A/B-B"
+    },
+    {
+      "page": 195,
+      "what": "Fig 4.2.57 cross-sections: track spacing/box widths 8,700 mm (outer-track) / 13,100 mm / 19,700 mm; clearance 'h' between rail and Skyway/C6 beam must be confirmed"
+    },
+    {
+      "page": 196,
+      "what": "Fig 4.2.58 photo: Skyway directly above PNR corridor; text: required width 12.7 m vs available 13.1 m for C6 off-ramp bridge"
+    },
+    {
+      "page": 485,
+      "what": "Sec (9) FTI Station + Fig 4.4.9 site plan: near East Service Rd / Champaca Rd intersection, beside future South ITS; Google Earth coord 14d30'16.18\"N 121d02'11.00\"E, elev 22 m, 1.54 km scale bar, R=400 m pedestrian radius, MMSP future station & current PNR station marked"
+    },
+    {
+      "page": 500,
+      "what": "Table 4.4.3 Station Matrix: FTI (EX) = Type E', 2 tracks, 1 platform, at-grade, 2 stories"
+    },
+    {
+      "page": 502,
+      "what": "Type E/E' definition: 2 tracks + 1 platform at-grade, 23 m (E) / 25 m (E') wide"
+    },
+    {
+      "page": 501,
+      "what": "Type A-D definitions (2/4 tracks, elevated 2-4 stories) \u2014 FTI not among them"
+    }
+  ],
+  "notes": "JICA DFR (2018-ish) design: FTI is an at-grade side-station-beside-tracks stop (Type E', island/side single platform between 2 tracks) within the FTI complex near East Service Rd & Champaca Rd; ground-plan chainage KP9+200-9+600. NOTE: as-built NSCR (CP NSCR-03-B, Leighton-First Balfour, 2023-2025) later changed FTI to an underground cut-and-cover station with MMSP interchange, so DFR geometry is superseded. Position: primary anchor is the printed Google Earth coordinate on Fig 4.4.9 (14.504494,121.036389); Mapcarta lists old FTI PNR station at (14.5064,121.03556), 230 m away -> uncertainty 250 m. Geodesic azimuth Bicutan->FTI is -28.0 deg, consistent with the -28.3 deg line azimuth used for the PRS92 offset. Footprint length 140 m is an estimate (station length not dimensioned in the DFR figures); width 25 m is the Type E' standard width. Cross-check: PRS92 back-transform reproduces the WGS84 estimate within ~12 m."
+}

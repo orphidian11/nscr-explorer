@@ -17,16 +17,28 @@ const viewer = createViewerScene(container)
 const stationLayers = new Map<string, StationLayerHandle>()
 let currentRoot: THREE.Group | null = null
 
-// Station anchor: Bicutan wall-bbox centre transformed PRS92 (EPSG:3123) -> WGS84 via PROJ.
-// Cross-checks with the OSM station node (14.48804, 121.04544) to within ~60 m.
-const STATION_ANCHOR = { lat: 14.488419, lon: 121.045368 }
-const ground = createGroundLayer({ lat: STATION_ANCHOR.lat, lon: STATION_ANCHOR.lon, zoom: 17 })
-ground.group.position.y = 0.05 // above the scene's base ground plane to avoid z-fighting
-viewer.scene.add(ground.group)
-void ground.load().then(() => {
-  ;(window as unknown as { __ground?: unknown }).__ground = ground
-  panel.setStatus(`${stationLayers.size} layers + OSM ground (${groundAttribution})`)
-})
+// OSM ground: re-anchored to each station's manifest origin (Bicutan and FTI sit
+// ~2 km apart — a fixed anchor leaves the other station floating in the void).
+let ground: ReturnType<typeof createGroundLayer> | null = null
+let groundAnchor = ''
+const FALLBACK_ANCHOR = { lat: 14.488419, lon: 121.045368 } // Bicutan (PROJ-transformed)
+
+function setGroundAnchor(anchor: { lat: number; lon: number }): void {
+  const key = `${anchor.lat.toFixed(6)},${anchor.lon.toFixed(6)}`
+  if (key === groundAnchor) return
+  groundAnchor = key
+  if (ground) {
+    viewer.scene.remove(ground.group)
+    ground.dispose()
+  }
+  ground = createGroundLayer({ lat: anchor.lat, lon: anchor.lon, zoom: 17 })
+  ground.group.position.y = 0.05 // above the scene's base ground plane to avoid z-fighting
+  viewer.scene.add(ground.group)
+  void ground.load().then(() => {
+    if (groundAnchor !== key) return // stale load from a disposed ground
+    panel.setStatus(`${stationLayers.size} layers + OSM ground (${groundAttribution})`)
+  })
+}
 
 const panel = createPanel(container, {
   onLayerToggle: (id, visible) => {
@@ -76,6 +88,7 @@ async function loadAndShow(stationId: string): Promise<void> {
     for (const layer of station.layers) {
       stationLayers.set(layer.id, layer)
     }
+    setGroundAnchor(station.originWgs84 ?? FALLBACK_ANCHOR)
     panel.setStation(station.name, [
       ...station.layers.map((layer) => ({ id: layer.id, label: layer.label, visible: layer.visible() })),
       { id: 'grid', label: 'Ground grid', visible: true },

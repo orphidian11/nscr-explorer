@@ -5,9 +5,30 @@ export interface Release {
   sections: Array<{ title: 'New features' | 'Fixes' | 'Other changes'; items: string[] }>
 }
 
-export const APP_VERSION = 'v0.6.0'
+export const APP_VERSION = 'v0.7.0'
 
 export const RELEASES: Release[] = [
+  {
+    version: 'v0.7.0',
+    date: '2026-10-19',
+    sections: [
+      {
+        title: 'New features',
+        items: [
+          'Line extended to FTI station (S-03b): the elevated viaduct now descends along the real alignment from Bicutan to FTI (~2 km), rendered as an at-grade approach',
+          'FTI station massing from the JICA DFR Type E\' design: island platform, tracks, ground slab, stair cores, flat canopy — added to the station picker as "FTI (JICA massing)"',
+          'Alignment re-sampled to ±4 km from the main-alignment DWG (801 points)',
+        ],
+      },
+      {
+        title: 'Other changes',
+        items: [
+          'FTI geometry is JICA-typology massing, NOT from arch DWGs (S-03b drawing set is not public) — every element flagged in the manifest. The DFR at-grade design is also superseded by the as-built underground station (CP NSCR-03-B)',
+          'The alignment DWG has a 4 km xref gap covering the Bicutan–FTI stretch; samples there are a straight-line bridge (the corridor is near-straight), flagged in the manifest',
+        ],
+      },
+    ],
+  },
   {
     version: 'v0.6.0',
     date: '2026-10-18',

@@ -48,8 +48,15 @@ walls = wall_boxes(SEGS["gf"], 0.50, 4.60) + wall_boxes(SEGS["cc"], 4.60, 11.90)
 # 201 sampled [e,n] pts every 10 m, +/-1000 m along the alignment through Bicutan.
 # Needed before the tracks: the station long axis (and tracks) runs PARALLEL to
 # the alignment (~63 deg in the local XZ frame), not along local x.
-VIA = json.load(open(r"E:\NSCR\pipeline\viaduct.json"))
-al_pts = [(p[0] - E0, -(p[1] - N0)) for p in VIA["alignment"]["points"]]  # local x,z
+ALX = json.load(open(r"E:\NSCR\pipeline\alignment_extended.json"))
+al_pts = [(p[0] - E0, -(p[1] - N0)) for p in ALX["points"]
+          if p is not None and p[0] is not None and p[1] is not None]  # local x,z, +/-4 km
+assert len(al_pts) == len(ALX["points"]), 'null points in alignment_extended.json'
+# FTI station (fti.json): Type E' at-grade, island platform, 25 m wide, ~140 m long.
+# PRS92 centre; along-track s from the extended alignment. Design superseded by the
+# as-built underground station (CP NSCR-03-B) - rendered as DFR-design massing.
+FTI = json.load(open(r"E:\NSCR\pipeline\fti.json"))
+fti_x, fti_z = FTI["center_prs92"]["e"] - E0, -(FTI["center_prs92"]["n"] - N0)
 
 # Closest-approach point = local s=0; near-station tangent defines "along".
 d0 = min(range(len(al_pts)), key=lambda i: math.hypot(*al_pts[i]))
@@ -68,6 +75,21 @@ def heading_rotY(dx, dz):
 _s_all = [x * tux + z * tuz for key in ("gf", "cc", "pl") for seg in SEGS[key]
           for (x, z) in ((e - E0, -(n - N0)) for (e, n) in seg)]
 S_LO, S_HI = min(_s_all), max(_s_all)
+FTI_S = fti_x * tux + fti_z * tuz          # along-track s of FTI centre
+FTI_HALF = 75.0                            # 140 m footprint + margin (estimate, not dimensioned)
+FTI_LO, FTI_HI = FTI_S - FTI_HALF, FTI_S + FTI_HALF
+STATION_BOXES = sorted([(S_LO, S_HI), (FTI_LO, FTI_HI)])  # sorted: clip sweep assumes ordered boxes
+assert all(STATION_BOXES[i][1] < STATION_BOXES[i+1][0] for i in range(len(STATION_BOXES)-1)), 'station boxes overlap'
+# Deck level: Bicutan elevated at BASE_Y; descends to at-grade FTI (rail base +0.60)
+# across the run between the two station boxes (simplification of the real gradient).
+FTI_BASE_Y = 0.60
+def deck_base_y(s):
+    if s >= S_HI:  # between the stations
+        t = min(max((s - S_HI) / max(FTI_LO - S_HI, 1.0), 0.0), 1.0)
+        return BASE_Y + (FTI_BASE_Y - BASE_Y) * t
+    if s <= S_LO:  # south of Bicutan stays elevated (no second station in window)
+        return BASE_Y
+    return BASE_Y
 
 # Tracks: along the alignment axis through the station centre, top of rail +10.80
 # (from Section dims). 8.8 m track spacing per section DIMS (X_Bic_Sta_Section.dxf)
@@ -268,10 +290,17 @@ for i in range(len(al_pts) - 1):
     p1, p2 = al_pts[i], al_pts[i + 1]
     s1, s2 = p1[0] * tux + p1[1] * tuz, p2[0] * tux + p2[1] * tuz
     lo, hi = min(s1, s2), max(s1, s2)
-    # Clip the 10-m segment against the station interval; emit the outside parts.
+    # Clip the 10-m segment against BOTH station boxes; emit the outside parts.
     spans = []
-    if lo < S_LO: spans.append((lo, min(hi, S_LO)))
-    if hi > S_HI: spans.append((max(lo, S_HI), hi))
+    cur = lo
+    for (b_lo, b_hi) in STATION_BOXES:
+        if b_hi <= cur or b_lo >= hi:
+            continue
+        if b_lo > cur:
+            spans.append((cur, min(hi, b_lo)))
+        cur = max(cur, b_hi)
+    if cur < hi:
+        spans.append((cur, hi))
     if not spans:
         continue
     L = math.dist(p1, p2)
@@ -281,6 +310,7 @@ for i in range(len(al_pts) - 1):
     for (sa, sb) in spans:
         if sb - sa < 1.0:
             continue
+        base_mid = deck_base_y((sa + sb) / 2)
         q1 = lerp_pt(p1, p2, (sa - s1) / (s2 - s1))
         q2 = lerp_pt(p1, p2, (sb - s1) / (s2 - s1))
         seg_l = math.dist(q1, q2)
@@ -288,13 +318,13 @@ for i in range(len(al_pts) - 1):
         for off in (-TRACK_OFF, TRACK_OFF):
             cx, cz = mx + perp[0] * off, mz + perp[1] * off
             viaduct_deck.append({"kind": "box", "size": [round(seg_l + 0.1, 2), BASE_T, DECK_W],
-                                 "pos": [round(cx, 2), BASE_Y - BASE_T / 2, round(cz, 2)], "rotY": round(rot, 4),
-                                 "meta": {"src": "viaduct.json U-girder base slab (simplified)"}})
+                                 "pos": [round(cx, 2), round(base_mid - BASE_T / 2, 2), round(cz, 2)], "rotY": round(rot, 4),
+                                 "meta": {"src": "alignment_extended U-girder base slab (simplified)"}})
             for w in (-1, 1):
                 wx, wz = cx + perp[0] * w * (DECK_W / 2 - WEB_T / 2), cz + perp[1] * w * (DECK_W / 2 - WEB_T / 2)
                 viaduct_deck.append({"kind": "box", "size": [round(seg_l + 0.1, 2), WEB_H, WEB_T],
-                                     "pos": [round(wx, 2), BASE_Y + WEB_H / 2, round(wz, 2)], "rotY": round(rot, 4),
-                                     "meta": {"src": "viaduct.json U-girder web (simplified)"}})
+                                     "pos": [round(wx, 2), round(base_mid + WEB_H / 2, 2), round(wz, 2)], "rotY": round(rot, 4),
+                                     "meta": {"src": "alignment_extended U-girder web (simplified)"}})
 
 # Piers every 40 m along the alignment (every 4th 10-m sample = CAD pier spacing),
 # skipped inside the station box. Twin 0.5 m columns ground(+1.0)->+10.0 plus a
@@ -302,19 +332,21 @@ for i in range(len(al_pts) - 1):
 for i in range(0, len(al_pts), 4):
     p = al_pts[i]
     s = p[0] * tux + p[1] * tuz
-    if S_LO <= s <= S_HI:
+    if any(b_lo <= s <= b_hi for (b_lo, b_hi) in STATION_BOXES):
         continue
     q2 = al_pts[min(i + 1, len(al_pts) - 1)]
     rot = heading_rotY(q2[0] - p[0], q2[1] - p[1])
     L = math.dist(p, q2) or 1.0
     perp = ((q2[1] - p[1]) / L, -(q2[0] - p[0]) / L)
+    py = deck_base_y(s)  # local deck base; columns rise from ground to the soffit
+    col_h = max(py - 0.6, 1.0)
     for off in (-1.5, 1.5):
-        viaduct_piers.append({"kind": "cylinder", "radius": 0.5, "height": 9.0,
-                              "pos": [round(p[0] + perp[0] * off, 2), 5.5, round(p[1] + perp[1] * off, 2)],
-                              "meta": {"src": "viaduct.json twin pier column, 40 m spacing (CAD pier markers)"}})
+        viaduct_piers.append({"kind": "cylinder", "radius": 0.5, "height": round(col_h, 2),
+                              "pos": [round(p[0] + perp[0] * off, 2), round(col_h / 2, 2), round(p[1] + perp[1] * off, 2)],
+                              "meta": {"src": "alignment_extended twin pier column, 40 m spacing (CAD pier markers)"}})
     viaduct_deck.append({"kind": "box", "size": [2.5, 0.8, 5.6],
-                         "pos": [round(p[0], 2), 10.2, round(p[1], 2)], "rotY": round(rot, 4),
-                         "meta": {"src": "viaduct.json pier cap beam (rendered with deck layer; schema keeps piers cylinders-only)"}})
+                         "pos": [round(p[0], 2), round(py - 0.4, 2), round(p[1], 2)], "rotY": round(rot, 4),
+                         "meta": {"src": "alignment_extended pier cap beam (rendered with deck layer; schema keeps piers cylinders-only)"}})
 
 manifest = {
   "name": "Bicutan Station (NSCR CP S-03c)",
@@ -340,3 +372,96 @@ print("viaduct deck boxes:", len(viaduct_deck), "| viaduct pier columns:", len(v
       "| station extent along alignment:", round(S_LO,1), "to", round(S_HI,1), "m")
 print("origin E,N:", round(E0,2), round(N0,2), "| along-track length:", round(L_along,1), "m")
 print("written:", OUT, os.path.getsize(OUT)//1024, "KB")
+
+
+# ================= FTI station manifest (v0.7.0) =================
+# JICA DFR Type E' at-grade design (superseded by the as-built underground CP
+# NSCR-03-B station - rendered as the DFR massing). NOT from arch DWGs: every
+# element below carries a flagged assumption in meta. Same origin frame as
+# Bicutan so the viaduct geometry is shared.
+# Levels (ASSUMED): ground +0.50, top of rail +0.90, platform FFL +2.00
+# (1.1 m above rail), flat canopy soffit +6.00.
+FTI_PLATFORM_W = 8.0    # island platform between the tracks
+FTI_PLATFORM_L = 140.0  # footprint length estimate (not dimensioned in DFR)
+FTI_RAIL = 0.90
+FTI_PLAT = 2.00
+
+fti_platform = []
+# Local frame is FTI-CENTRED (origin_easting/northing = FTI centre) so the OSM
+# ground tiles (anchored at origin_wgs84 = FTI) align with the geometry.
+cx, cz = 0.0, 0.0
+fti_platform.append({"kind": "box", "size": [FTI_PLATFORM_L, 0.4, FTI_PLATFORM_W],
+                     "pos": [round(cx, 2), round(FTI_PLAT - 0.2, 2), round(cz, 2)],
+                     "rotY": round(heading_rotY(tux, tuz), 4), "color": "#c3c8cd",
+                     "meta": {"src": "JICA DFR Type E' island platform (p.195, p.500-502)",
+                              "assumption": "length 140 m estimate; width 25 m standard"}})
+for s_edge in (-FTI_PLATFORM_L / 2, FTI_PLATFORM_L / 2):
+    ex = cx + tux * s_edge
+    ez = cz + tuz * s_edge
+    fti_platform.append({"kind": "box", "size": [1.0, 1.2, FTI_PLATFORM_W],
+                         "pos": [round(ex, 2), round(FTI_PLAT + 0.6, 2), round(ez, 2)],
+                         "rotY": round(heading_rotY(tux, tuz), 4), "color": "#b7bcc2",
+                         "meta": {"src": "platform end wall (ASSUMED)"}})
+# tactile strips on both platform edges
+for side in (-1, 1):
+    tx = cx + (-tuz) * side * (FTI_PLATFORM_W / 2 - 0.35)
+    tz = cz + tux * side * (FTI_PLATFORM_W / 2 - 0.35)
+    fti_platform.append({"kind": "box", "size": [round(FTI_PLATFORM_L - 2, 1), 0.06, 0.7],
+                         "pos": [round(tx, 2), round(FTI_PLAT + 0.06, 2), round(tz, 2)],
+                         "rotY": round(heading_rotY(tux, tuz), 4), "color": "#d9a821",
+                         "meta": {"src": "tactile warning strip (ASSUMED placement)"}})
+
+fti_tracks = []
+for off in (-TRACK_OFF, TRACK_OFF):
+    fti_tracks.append({"kind": "box", "size": [round(FTI_PLATFORM_L + 40, 1), 0.3, 1.6],
+                       "pos": [round(cx + (-tuz) * off, 2), round(FTI_RAIL - 0.15, 2), round(cz + tux * off, 2)],
+                       "rotY": round(heading_rotY(tux, tuz), 4),
+                       "meta": {"src": "8.8 m spacing through FTI; rail top +0.90 (ASSUMED at-grade level)"}})
+
+fti_floors = [{"kind": "box", "size": [round(FTI_PLATFORM_L + 20, 1), 0.3, 25.0],
+               "pos": [round(cx, 2), round(0.50 - 0.15, 2), round(cz, 2)],
+               "rotY": round(heading_rotY(tux, tuz), 4), "color": "#c9ccd0",
+               "meta": {"src": "Type E' ground slab, 25 m width standard (ASSUMED extent)"}}]
+
+fti_stairs = []
+for s_off in (-45.0, 45.0):
+    sx = cx + tux * s_off
+    sz = cz + tuz * s_off
+    fti_stairs.append({"kind": "box", "size": [6.0, 1.6, 4.0],
+                       "pos": [round(sx - tuz * (FTI_PLATFORM_W / 2 + 3.0), 2), 1.3,
+                               round(sz + tux * (FTI_PLATFORM_W / 2 + 3.0), 2)],
+                       "rotY": round(heading_rotY(tux, tuz), 4),
+                       "meta": {"src": "stair core ground->platform (ASSUMED position)"}})
+
+# Canopy support columns along both platform edges (ASSUMED positions)
+fti_piers = []
+for s_off in range(-60, 61, 30):
+    for side in (-1, 1):
+        px = cx + tux * s_off + (-tuz) * side * (FTI_PLATFORM_W / 2 + 1.5)
+        pz = cz + tuz * s_off + tux * side * (FTI_PLATFORM_W / 2 + 1.5)
+        fti_piers.append({"kind": "cylinder", "radius": 0.35, "height": 5.85,
+                          "pos": [round(px, 2), 5.85 / 2, round(pz, 2)],
+                          "meta": {"src": "canopy support column (ASSUMED 30 m spacing)"}})
+
+fti_canopy = {"kind": "box", "size": [round(FTI_PLATFORM_L + 10, 1), 0.3, 25.0],
+              "pos": [round(cx, 2), 6.0, round(cz, 2)],
+              "rotY": round(heading_rotY(tux, tuz), 4), "color": "#d4d8dc",
+              "meta": {"src": "flat canopy roof (ASSUMED - Type E' canopy form not dimensioned in DFR)"}}
+
+fti_manifest = {
+  "name": "FTI Station (NSCR CP S-03b) - JICA massing",
+  "crs": "PRS92 PTM Zone III (EPSG:3123), metres",
+  "origin_easting": round(FTI["center_prs92"]["e"], 2), "origin_northing": round(FTI["center_prs92"]["n"], 2),
+  "origin_wgs84": {"lat": 14.504494, "lon": 121.036389,
+                   "note": "printed coordinate on DFR Fig 4.4.9 (p.485); ~250 m uncertainty"},
+  "levels_m": {"ground_ffl": 0.50, "top_of_rail": FTI_RAIL, "platform_ffl": FTI_PLAT,
+               "canopy": 6.0, "note": "ASSUMED - not dimensioned in the DFR"},
+  "sources": ["jica_southline_feasibility_dfr.pdf p.195 (Fig 4.2.56), p.500-502 (Type E'), p.485 (siting)",
+              "alignment_extended.json centerline",
+              "NOTE: DFR at-grade design superseded by as-built underground CP NSCR-03-B station"],
+  "objects": {"platform": fti_platform, "tracks": fti_tracks, "floors": fti_floors,
+              "stairs": fti_stairs, "canopy_box": [fti_canopy], "piers": fti_piers}
+}
+with open(r"E:\NSCR\app\src\data\fti-massing.json", "w") as fh:
+    json.dump(fti_manifest, fh, indent=1)
+print("FTI manifest:", len(fti_platform), "platform objs | origin frame shared with Bicutan | FTI s =", round(FTI_S, 1))

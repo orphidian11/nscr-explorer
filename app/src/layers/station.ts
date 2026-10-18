@@ -78,6 +78,8 @@ export interface StationModel {
   layers: StationLayerHandle[]
   /** GLTF placeholder slots waiting to be filled by loaders.ts. */
   gltfRefs: GltfRef[]
+  /** WGS84 anchor of the manifest (for re-anchoring the OSM ground per station). */
+  originWgs84?: { lat: number; lon: number }
 }
 
 const DEFAULT_COLOR = '#b9bfc7'
@@ -248,6 +250,8 @@ export interface RealStationManifest {
     beams?: RealBoxObject[]
     /** Walkable floor slabs (ground +0.50, concourse +4.60). */
     floors?: RealBoxObject[]
+    /** Flat canopy roof (FTI massing). */
+    canopy_box?: RealBoxObject[]
   }
 }
 
@@ -443,6 +447,7 @@ export function buildRealStation(manifest: RealStationManifest): StationModel {
   addLayer('viaduct_piers', `Viaduct piers (${objects.viaduct_piers?.length ?? 0})`, objects.viaduct_piers ? [makeInstancedCylinders(objects.viaduct_piers)] : [])
   addLayer('beams', `Framing beams (${objects.beams?.length ?? 0})`, objects.beams ? [makeInstancedBoxes(objects.beams, new THREE.Color('#7d838b'))] : [])
   addLayer('floors', 'Floors (walkable)', asArray(objects.floors).map((obj) => makeSingleBox(obj, new THREE.Color('#c9ccd0'))))
+  if (objects.canopy_box) addLayer('canopy', 'Canopy (flat)', asArray(objects.canopy_box).map((obj) => makeSingleBox(obj, VAULT_COLOR)))
 
-  return { name: manifest.name, root, layers, gltfRefs: [] }
+  return { name: manifest.name, root, layers, gltfRefs: [], originWgs84: manifest.origin_wgs84 }
 }
