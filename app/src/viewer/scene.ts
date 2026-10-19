@@ -162,7 +162,10 @@ export function createViewerScene(container: HTMLElement): ViewerScene {
     const dt = last === undefined ? 0 : Math.min((time - last) / 1000, 0.1)
     ;(renderer as unknown as { __lastFrameTime?: number }).__lastFrameTime = time
     walk.update(dt)
-    controls.update()
+    // OrbitControls.update() clamps the camera radius to maxDistance around its
+    // target — that would leash fly/walk navigation to the station. Skip it
+    // while a nav mode owns the camera (it applies its own motion).
+    if (!walk.isActive()) controls.update()
     renderer.render(scene, camera)
   })
 
