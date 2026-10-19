@@ -105,57 +105,72 @@ def tangent_at(c, idx, step=3):
     L = math.hypot(dx, dz) or 1.0
     return (dx / L, dz / L)
 
-for ci, c in enumerate(comp_info):
-    if c["s_max"] < last_s + 200:  # fully behind us (e.g. south of Bicutan)
-        continue
-    # entry point: first component point whose s > last_s
-    entries = [(s, i) for i, s in enumerate(c["s_min"] + 0 for _ in [0])]  # placeholder
-    # compute per-point s along the component from its own chain, then offset
-    cum = [0.0]
-    for a, b in zip(c["pts_local"], c["pts_local"][1:]):
-        cum.append(cum[-1] + math.dist(a, b))
-    # choose orientation: the end of the component with s closer to last_s is the entry
-    if s_of_local(*c["pts_local"][0]) > s_of_local(*c["pts_local"][-1]):
-        pass  # keep order; s increases along pts
-    entry_s_candidates = [s_of_local(*c["pts_local"][0]), s_of_local(*c["pts_local"][-1])]
-    if min(abs(v - last_s) for v in entry_s_candidates) > 600:
-        continue  # not connected to our current position in s-space
-    if entry_s_candidates[0] <= entry_s_candidates[1]:
-        order = range(len(c["pts_local"]))
-        entry_idx = 0
+# OSM components: keep only points INSIDE the gap window (s in [GAP_START, GAP_END]).
+# Everything outside is already covered by the DXF centerline — letting it through
+# duplicates the corridor as a laterally-offset parallel copy (the "veer" bug).
+gap_comps = []
+for c in comp_info:
+    pts = [(i, s_of_local(*p)) for i, p in enumerate(c["pts_local"])]
+    in_gap = [(i, s) for i, s in pts if GAP_START <= s <= GAP_END]
+    if len(in_gap) >= 2:
+        gap_comps.append((c, in_gap))
+# Use ONLY the largest component — it covers the whole gap on its own; the
+# smaller overlapping ones are parallel/duplicate mappings that zigzag the path.
+gap_comps.sort(key=lambda t: -(t[0]["n"]))
+print("gap components:", [(f"s {min(s for _,s in g):.0f}..{max(s for _,s in g):.0f} n={len(g)}",) for _, g in gap_comps])
+gap_comps = gap_comps[:1]
+print("using single largest component")
+
+last_s = GAP_START
+last_pt = (result[-1][1], result[-1][2])
+last_tan = (TUX, TUZ)
+
+def tangent_at(c, idx, step=3):
+    i0, i1 = max(0, idx - step), min(len(c["pts_local"]) - 1, idx + step)
+    dx = c["pts_local"][i1][0] - c["pts_local"][i0][0]
+    dz = c["pts_local"][i1][1] - c["pts_local"][i0][1]
+    L = math.hypot(dx, dz) or 1.0
+    return (dx / L, dz / L)
+
+def hermite_to(target, target_tan_out):
+    global last_s, last_pt, last_tan
+    gap_len = math.dist(last_pt, target)
+    if gap_len < 20:
+        return
+    t0 = last_tan
+    t1 = (-target_tan_out[0], -target_tan_out[1])
+    n_bridge = max(int(gap_len / 10), 8)
+    p0 = last_pt; p3 = target
+    p1 = (p0[0] + t0[0] * gap_len / 3, p0[1] + t0[1] * gap_len / 3)
+    p2 = (p3[0] + t1[0] * gap_len / 3, p3[1] + t1[1] * gap_len / 3)
+    for k in range(1, n_bridge + 1):
+        t = k / n_bridge
+        h = lambda a, b, cc, d, t: ((1-t)**3*a + 3*(1-t)**2*t*b + 3*(1-t)*t*t*cc + t**3*d)
+        result.append((last_s + gap_len * t, h(p0[0], p1[0], p2[0], p3[0], t), h(p0[1], p1[1], p2[1], p3[1], t)))
+    last_s += gap_len
+    last_pt = target
+    print(f"hermite bridge: {gap_len:.0f} m (s -> {last_s:+.0f})")
+
+for c, in_gap in gap_comps:
+    # component chain: order pts by cumulative distance from the in-gap end
+    i0 = in_gap[0][0]
+    # orient: walk from in_gap[0] toward in_gap[-1] along index order or reverse
+    if in_gap[-1][0] > in_gap[0][0]:
+        idxs = [i for i, _ in in_gap]
     else:
-        order = range(len(c["pts_local"]) - 1, -1, -1)
-        entry_idx = len(c["pts_local"]) - 1
-    entry_s = s_of_local(*c["pts_local"][entry_idx])
-    comp_s = {i: entry_s + (cum[i] - cum[entry_idx]) * (1 if entry_idx == 0 else -1) for i in order}
-    # hermite bridge from last_pt to component entry (if a gap remains)
-    c_entry_local = c["pts_local"][entry_idx]
-    if math.dist(last_pt, c_entry_local) > 30:
-        gap_len = math.dist(last_pt, c_entry_local)
-        t0 = last_tan or (TUX, TUZ)
-        t1 = tangent_at(c, entry_idx)
-        # ensure t1 points "backwards" (out of the component entry)
-        t1 = (-t1[0], -t1[1])
-        n_bridge = max(int(gap_len / 10), 8)
-        p0 = last_pt; p3 = c_entry_local
-        p1 = (p0[0] + t0[0] * gap_len / 3, p0[1] + t0[1] * gap_len / 3)
-        p2 = (p3[0] + t1[0] * gap_len / 3, p3[1] + t1[1] * gap_len / 3)
-        for k in range(1, n_bridge + 1):
-            t = k / n_bridge
-            h = lambda a, b, cc, d, t: ((1-t)**3*a + 3*(1-t)**2*t*b + 3*(1-t)*t*t*cc + t**3*d)
-            x = h(p0[0], p1[0], p2[0], p3[0], t)
-            z = h(p0[1], p1[1], p2[1], p3[1], t)
-            result.append((last_s + gap_len * t, x, z))
-        print(f"hermite bridge: {gap_len:.0f} m (s {last_s:+.0f} -> {entry_s:+.0f})")
-    # component points
-    for i in order:
-        s = comp_s[i]
-        if s <= last_s + 5: continue
+        idxs = [i for i, _ in reversed(in_gap)]
+    # hermite from current position to the component entry
+    c_entry = c["pts_local"][idxs[0]]
+    hermite_to(c_entry, tangent_at(c, idxs[0]))
+    # component points (real geometry)
+    prev_i = idxs[0]
+    for i in idxs[1:]:
         x, z = c["pts_local"][i]
-        result.append((s, x, z))
-        last_s = s
-    last_pt = (c["pts_local"][list(order)[-1]][0], c["pts_local"][list(order)[-1]][1])
-    last_tan = tangent_at(c, list(order)[-1])
+        last_s += math.dist(c["pts_local"][prev_i], (x, z))
+        last_pt = (x, z)
+        result.append((last_s, x, z))
+        prev_i = i
+    last_tan = tangent_at(c, idxs[-1])
 
 # 5) DXF points s >= 5277
 for s, p in sorted(v1_s, key=lambda t: t[0]):

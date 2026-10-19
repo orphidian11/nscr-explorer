@@ -549,7 +549,7 @@ line_objects = {
 def as_list(x):
     return x if isinstance(x, list) else [x]
 line_manifest = {
-  "name": "Bicutan <-> FTI (line, v0.8.0)",
+  "name": "Bicutan <-> FTI (line, v0.9.0)",
   "crs": "PRS92 PTM Zone III (EPSG:3123), metres",
   "origin_easting": round(E0, 2), "origin_northing": round(N0, 2),
   "origin_wgs84": {"lat": 14.488419, "lon": 121.045368},
