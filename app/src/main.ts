@@ -170,4 +170,4 @@ async function loadAndShow(stationId: string): Promise<void> {
   }
 }
 
-void loadAndShow('bicutan-real')
+void loadAndShow('line-bicutan-fti')
