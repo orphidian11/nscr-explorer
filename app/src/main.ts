@@ -23,6 +23,20 @@ let ground: ReturnType<typeof createGroundLayer> | null = null
 let groundAnchor = ''
 const FALLBACK_ANCHOR = { lat: 14.488419, lon: 121.045368 } // Bicutan (PROJ-transformed)
 
+/** Fog + camera limits derived from the streamed-ground radius, so the visible
+ * horizon always ends inside the streamed area (no blue void beyond it). */
+function applyHorizonLimits(): void {
+  if (!ground) return
+  const r = ground.radiusMeters
+  viewer.controls.maxDistance = r * 2.2
+  if (viewer.scene.fog instanceof THREE.Fog) {
+    viewer.scene.fog.near = r * 0.75
+    viewer.scene.fog.far = r * 1.7
+  }
+  viewer.camera.far = Math.max(viewer.camera.far, r * 3)
+  viewer.camera.updateProjectionMatrix()
+}
+
 function setGroundAnchor(anchor: { lat: number; lon: number }): void {
   const key = `${anchor.lat.toFixed(6)},${anchor.lon.toFixed(6)}`
   if (key === groundAnchor) return
@@ -34,6 +48,10 @@ function setGroundAnchor(anchor: { lat: number; lon: number }): void {
   ground = createGroundLayer({ lat: anchor.lat, lon: anchor.lon, zoom: 17 })
   ground.group.position.y = 0.05 // above the scene's base ground plane to avoid z-fighting
   viewer.scene.add(ground.group)
+  // Keep the horizon honest: fog fades the streamed ground's rim into the sky
+  // and the camera can never pull back past the streamed area, so dragging or
+  // flying toward the next station always has ground under it.
+  applyHorizonLimits()
   void ground.load().then(() => {
     if (groundAnchor !== key) return // stale load from a disposed ground
     panel.setStatus(`${stationLayers.size} layers + OSM ground (${groundAttribution})`)
@@ -142,6 +160,7 @@ async function loadAndShow(stationId: string): Promise<void> {
       ? new THREE.Box3().setFromObject(station.root)
       : coreBounds
     viewer.fitCameraTo(bounds)
+    applyHorizonLimits()  // fitCameraTo sets dist-based fog; clamp back to the streamed radius
     panel.setStatus(`${station.layers.length} layers loaded from manifest`)
   } catch (error) {
     console.error('[main] Station load failed:', error)

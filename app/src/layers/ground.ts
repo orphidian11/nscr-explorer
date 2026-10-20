@@ -50,12 +50,13 @@ export interface GroundLayerOptions {
   placeholderColor?: number;
 }
 
-/** Default coverage radius (m) per zoom level. */
+/** Default coverage radius (m) per zoom level. z17 1200 m = ~120 m/s fly speed
+ * gives ~10 s of streamed ground ahead; the fog fades the rim into the sky. */
 const DEFAULT_RADIUS: Record<number, number> = {
-  15: 2000,
-  16: 1200,
-  17: 700,
-  18: 300,
+  15: 2500,
+  16: 1800,
+  17: 1200,
+  18: 600,
 };
 
 export interface GroundLayer {
@@ -63,6 +64,8 @@ export interface GroundLayer {
   group: THREE.Group;
   /** Number of tile meshes currently live (updates as streaming progresses). */
   readonly tileCount: number;
+  /** Live coverage radius in metres (fog/camera limits key off this). */
+  readonly radiusMeters: number;
   /**
    * Stream tiles around a camera position (local metres, layer frame).
    * Idempotent + throttled: no-op unless the camera moved ≥ half a tile.
@@ -245,9 +248,13 @@ export function createGroundLayer(options: GroundLayerOptions): GroundLayer {
   return {
     group,
     get tileCount() {
-      return tiles.size;
+      return tiles.size
     },
     update,
+    /** Live coverage radius — UI uses it to keep fog/camera limits inside the streamed area. */
+    get radiusMeters() {
+      return radius
+    },
     load: () => Promise.all([...jobs]).then(() => undefined),
     dispose: () => {
       for (const tile of tiles.values()) {
