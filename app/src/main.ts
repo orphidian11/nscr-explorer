@@ -31,10 +31,8 @@ function applyHorizonLimits(): void {
   // Room to fly the corridor: the streamed ground follows the camera, so the
   // camera range just needs to cover the station-to-station stretch (~2.5 km).
   viewer.controls.maxDistance = 5000
-  if (viewer.scene.fog instanceof THREE.Fog) {
-    viewer.scene.fog.near = r * 0.75
-    viewer.scene.fog.far = r * 1.7
-  }
+  // Fog is distance-adaptive (see updateGroundStreaming); keep the far plane
+  // generous for the multi-km presets.
   viewer.camera.far = Math.max(viewer.camera.far, r * 5)
   viewer.camera.updateProjectionMatrix()
 }
@@ -66,6 +64,13 @@ function setGroundAnchor(anchor: { lat: number; lon: number }): void {
 // controls change). update() throttles internally to half-tile movement.
 function updateGroundStreaming(): void {
   ground?.update(viewer.camera.position.x, viewer.camera.position.z)
+  // Adaptive fog: distance-based so it never saturates at high-altitude presets
+  // (Top sits 2.9 km up) while still hiding the streamed-ground rim up close.
+  if (ground && viewer.scene.fog instanceof THREE.Fog) {
+    const d = viewer.camera.position.distanceTo(viewer.controls.target)
+    viewer.scene.fog.near = Math.max(ground.radiusMeters * 0.6, d * 0.8)
+    viewer.scene.fog.far = viewer.scene.fog.near + ground.radiusMeters * 1.8
+  }
 }
 viewer.controls.addEventListener('change', updateGroundStreaming)
 // Timer handle intentionally not stored — streaming runs for the page lifetime.
