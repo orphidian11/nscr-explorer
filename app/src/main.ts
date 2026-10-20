@@ -28,12 +28,14 @@ const FALLBACK_ANCHOR = { lat: 14.488419, lon: 121.045368 } // Bicutan (PROJ-tra
 function applyHorizonLimits(): void {
   if (!ground) return
   const r = ground.radiusMeters
-  viewer.controls.maxDistance = r * 2.2
+  // Room to fly the corridor: the streamed ground follows the camera, so the
+  // camera range just needs to cover the station-to-station stretch (~2.5 km).
+  viewer.controls.maxDistance = 5000
   if (viewer.scene.fog instanceof THREE.Fog) {
     viewer.scene.fog.near = r * 0.75
     viewer.scene.fog.far = r * 1.7
   }
-  viewer.camera.far = Math.max(viewer.camera.far, r * 3)
+  viewer.camera.far = Math.max(viewer.camera.far, r * 5)
   viewer.camera.updateProjectionMatrix()
 }
 
