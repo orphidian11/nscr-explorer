@@ -5,9 +5,34 @@ export interface Release {
   sections: Array<{ title: 'New features' | 'Fixes' | 'Other changes'; items: string[] }>
 }
 
-export const APP_VERSION = 'v0.9.0'
+export const APP_VERSION = 'v0.9.1'
 
 export const RELEASES: Release[] = [
+  {
+    version: 'v0.9.1',
+    date: '2026-10-20',
+    sections: [
+      {
+        title: 'Fixes',
+        items: [
+          'Corridor alignment: the viaduct no longer veers off the rail corridor — the 4 km drawing-data gap is now bridged with the real NSCR construction geometry from OpenStreetMap (plus a tangent-anchored curve at the splice), instead of a straight chord that drifted up to 355 m from the true alignment. A duplicate parallel corridor near the station was also eliminated',
+          'Fly mode stopped at the station centre: OrbitControls clamped the camera to its target every frame — the leash is removed so you can fly the full Bicutan ↔ FTI corridor',
+          'Blue haze when navigating away from a station: streamed map coverage widened to 1,200 m, the ground rim now fades into the sky via distance-adaptive fog, and the camera can never outrun the streamed area',
+          'Top preset rendered uniform blue (fog saturated at its 2.9 km vantage) — fog now scales with camera distance',
+          'Camera far plane now rescales with the framed extent; the camera frames the station core instead of the multi-km viaduct',
+          'OrbitControls setPointerCapture NotFoundError on fast clicks suppressed',
+          'Station manifests are written atomically and fetched with no-store, so a dev-time regeneration can no longer serve a partial file',
+        ],
+      },
+      {
+        title: 'Other changes',
+        items: [
+          'Line view (Bicutan ↔ FTI) is now the default on load',
+          'Orbit zoom-out range raised to 5 km to cover the whole corridor',
+        ],
+      },
+    ],
+  },
   {
     version: 'v0.9.0',
     date: '2026-10-19',
