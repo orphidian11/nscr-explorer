@@ -5,9 +5,28 @@ export interface Release {
   sections: Array<{ title: 'New features' | 'Fixes' | 'Other changes'; items: string[] }>
 }
 
-export const APP_VERSION = 'v0.9.1'
+export const APP_VERSION = 'v1.0.0'
 
 export const RELEASES: Release[] = [
+  {
+    version: 'v1.0.0',
+    date: '2026-10-22',
+    sections: [
+      {
+        title: 'New features',
+        items: [
+          'Three new stations: Sucat with REAL CAD geometry (walls from the A-WALL layers of the CP S-03c Sucat set, platform footprints from the A-PSD/HANDRAIL outlines, levels verified from X_Suc_Sta_Section: GF +1.00, concourse +7.85, rail +15.50, platform +16.60) — plus Senate-DepEd (BUE, elevated Type C′ massing) and EDSA (at-grade Type E massing) from the DXF station bboxes, all assumptions flagged in the manifests',
+          'Corridor extended to ~15 km: new "Line: Sucat ↔ Bicutan ↔ EDSA (corridor)" default view covering all 5 stations with the full viaduct deck/piers over the whole alignment_v3 (1526 pts @10 m), elevated at Sucat/Bicutan/Senate-DepEd and at-grade at FTI/EDSA with linear ramps between',
+        ],
+      },
+      {
+        title: 'Other changes',
+        items: [
+          'Alignment source switched to alignment_v3.json; station positions are geometric nearest-approach projections onto the assembled alignment (alignment_v3\'s nominal station chainages ignore the OSM splice lengths and would misplace the deck by up to 5 km)',
+        ],
+      },
+    ],
+  },
   {
     version: 'v0.9.1',
     date: '2026-10-20',

@@ -441,7 +441,13 @@ export function buildRealStation(manifest: RealStationManifest): StationModel {
   addLayer('tracks', 'Tracks', asArray(objects.tracks).map((obj) => makeSingleBox(obj, TRACK_COLOR)))
   addLayer('piers', `Piers (${objects.piers?.length ?? 0})`, objects.piers ? [makeInstancedCylinders(objects.piers)] : [])
   addLayer('stairs', 'Stairs / cores', asArray(objects.stairs).map((obj) => makeSingleBox(obj, STAIR_COLOR)))
-  if (objects.vault) addLayer('canopy', 'Canopy (vault)', [makeVaultMesh(objects.vault)])
+  if (objects.vault) {
+    // The line manifests merge object lists, so `vault` may arrive as an array.
+    const vaults = asArray(objects.vault)
+    if (vaults.length > 1) console.warn(`[station] manifest has ${vaults.length} vaults; rendering only the first`)
+    const vault = vaults[0]
+    if (vault) addLayer('canopy', 'Canopy (vault)', [makeVaultMesh(vault)])
+  }
   addLayer('lattice', `Facade lattice (${objects.lattice?.length ?? 0})`, objects.lattice ? [makeInstancedBoxes(objects.lattice, LATTICE_COLOR)] : [])
   addLayer('viaduct_deck', `Viaduct deck (${objects.viaduct_deck?.length ?? 0})`, objects.viaduct_deck ? [makeInstancedBoxes(objects.viaduct_deck, VIADUCT_DECK_COLOR)] : [])
   addLayer('viaduct_piers', `Viaduct piers (${objects.viaduct_piers?.length ?? 0})`, objects.viaduct_piers ? [makeInstancedCylinders(objects.viaduct_piers)] : [])

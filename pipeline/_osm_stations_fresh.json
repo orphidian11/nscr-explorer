@@ -1,0 +1,32 @@
+{
+ "4476244487": {
+  "name": "Sucat",
+  "lat": 14.4523266,
+  "lon": 121.0509253,
+  "railway": "station"
+ },
+ "4476852363": {
+  "name": "EDSA",
+  "lat": 14.5412485,
+  "lon": 121.0167453,
+  "railway": "station"
+ },
+ "4476852364": {
+  "name": "Nichols",
+  "lat": 14.5235112,
+  "lon": 121.0263007,
+  "railway": "station"
+ },
+ "12752311664": {
+  "name": "NAIA Terminal 3",
+  "lat": 14.520373,
+  "lon": 121.015031,
+  "railway": "station"
+ },
+ "13564783064": {
+  "name": "Senate-DepEd",
+  "lat": 14.5287886,
+  "lon": 121.0234944,
+  "railway": "station"
+ }
+}

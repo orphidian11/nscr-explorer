@@ -1,0 +1,57 @@
+{
+  "crs_note": "DXF plan coordinates are PRS92 / Philippines TM Zone III (EPSG:3123), eastings ~500k, northings ~1.6M. WGS84 conversion via pyproj EPSG:3123 -> EPSG:4326.",
+  "stations": [
+    {
+      "id": "sucat",
+      "name": "Sucat",
+      "dfr_type": "Type C (2 tracks, 2 platforms, elevated 3-story station)",
+      "structure": "elevated",
+      "bbox_prs92": {"min_e": 505395.5, "min_n": 1597941.6, "max_e": 505464.8, "max_n": 1598164.9},
+      "bbox_source_dxf": "E:/NSCR/pipeline/dxf/CP_S-03c_01_SUC_AR/X_Suc_Sta_Platform.dxf (+ X_Suc_Sta_Concourse.dxf, X_Suc_Sta_Ground Floor.dxf)",
+      "center_prs92": {"e": 505430.2, "n": 1598053.3},
+      "center_wgs84": {"lat": 14.449380, "lon": 121.051728},
+      "platform_arrangement": "2 side platforms, 2 tracks (DFR station matrix p.500; Table 4.3.64 PSD table: Elevated, half-height PSD, 2 tracks, 64 doors)",
+      "dfr_chainage": "24km764m (matrix); site plan labels KM 24+843.000",
+      "osm_cross_check": {"osm_node": 4476244487, "osm_name": "Sucat", "lat": 14.4523266, "lon": 121.0509253, "delta_m": 339},
+      "sources": ["CP_S-03c_01_SUC_AR X_Suc_Sta_Platform.dxf / X_Suc_Sta_Site Plan.dxf (PRS92 georeferenced)", "JICA South Line DFR p.500 Table 4.4.3 Station Matrix (rendered image)", "JICA DFR p.476 Table 4.3.64 (PSD quantities)", "OSM Overpass node 4476244487"],
+      "assumptions": ["bbox = platform+concourse envelope; site-plan entities extend wider (ingress/egress plazas E 505356-505560, N 1597830-1598274)", "DXF-vs-OSM delta 339 m is along-track: OSM node is the old PNR Sucat platform, the DXF box is the new NSCR station (chainage 24.843 km); slightly above the 300 m target"]
+    },
+    {
+      "id": "senate-deped_bue",
+      "name": "Senate-DepEd (Buendia, BUE set)",
+      "dfr_type": "Type C' (2 tracks, 2 platforms, elevated 3-story station)",
+      "structure": "elevated",
+      "bbox_prs92": {"min_e": 500868.2, "min_n": 1609551.2, "max_e": 500994.6, "max_n": 1609743.4},
+      "bbox_source_dxf": "E:/NSCR/pipeline/dxf/CP_S-03a_02_BUE_ST/X_Bue_Sta_Intermediate Floor Level 2.dxf (+ X_BUE_ST-ROOF FRAMING PLAN.dxf 500861-500984 / 1609551-1609733; concourse framing plan incl. aprons 500748-501013 / 1609473-1609773)",
+      "center_prs92": {"e": 500931.4, "n": 1609647.3},
+      "center_wgs84": {"lat": 14.554176, "lon": 121.010003},
+      "platform_arrangement": "2 side platforms, 2 tracks (DFR station matrix p.500)",
+      "dfr_chainage": "11km992m (matrix, listed as Buendia (EX))",
+      "osm_cross_check": {"osm_node": 13564783064, "osm_name": "Senate-DepEd", "lat": 14.5287886, "lon": 121.0234944, "delta_m": 3175},
+      "sources": ["CP_S-03a_02_BUE_ST X_Bue_Sta_Intermediate Floor Level 2.dxf (PRS92 georeferenced)", "JICA South Line DFR p.500 Table 4.4.3", "JICA DFR p.476 Table 4.3.64", "OSM Overpass node 13564783064"],
+      "assumptions": ["The OSM 'Senate-DepEd' node is MISPLACED ~3.2 km east (near Chino Roces/Osmena Hwy): its spacing to the OSM EDSA node is 1564 m vs DFR chainage spacing Buendia-EDSA of 2071 m and DXF-derived spacing of 1947 m; the DXF BUE location (old PNR Buendia corridor, 14.554/121.010) is consistent with DFR chainages and the PNR alignment and is treated as authoritative", "NSCR renames the DFR 'Buendia' station 'Senate-DepEd' (matches the task's BUE = Senate/DepEd mapping)"]
+    },
+    {
+      "id": "edsa",
+      "name": "EDSA",
+      "dfr_type": "Type E (at-grade, 2 stories)",
+      "structure": "at-grade",
+      "bbox_prs92": {"min_e": 501762.8, "min_n": 1607828.5, "max_e": 501883.5, "max_n": 1608020.8},
+      "bbox_source_dxf": "E:/NSCR/pipeline/dxf/CP_S-03a_02_EDS_ST/X_EDS_SS-ST-CONCOURSE FLOOR FRAMING PLAN.dxf (+ X_EDS-SS-ST-PILE SETOUT PLAN 501765-501877 / 1607830-1608015)",
+      "center_prs92": {"e": 501823.1, "n": 1607924.6},
+      "center_wgs84": {"lat": 14.538605, "lon": 121.018277},
+      "platform_arrangement": "1 island platform, 2 tracks (DFR station matrix p.500); Table 4.3.64: At Grade, half-height PSD, 2 tracks, 64 doors",
+      "dfr_chainage": "14km063m (matrix)",
+      "osm_cross_check": {"osm_node": 4476852363, "osm_name": "EDSA", "lat": 14.5412485, "lon": 121.0167453, "delta_m": 337},
+      "sources": ["CP_S-03a_02_EDS_ST X_EDS_SS-ST-CONCOURSE FLOOR FRAMING PLAN.dxf (PRS92 georeferenced)", "JICA South Line DFR p.500 Table 4.4.3 (rendered image)", "JICA DFR p.476 Table 4.3.64", "OSM Overpass node 4476852363"],
+      "assumptions": ["bbox = concourse/pile-setout envelope of the station building", "DXF-vs-OSM delta 337 m along-track: OSM node is the old PNR EDSA (Magallanes) platform vs new NSCR at-grade station box; slightly above the 300 m target", "DFR matrix type letter read from rendered table image (page is a raster table); 'At-grade' cross-confirmed by text Table 4.3.64"]
+    }
+  ],
+  "verification_summary": {
+    "Sucat": {"type": "Type C elevated", "center_wgs84": [14.449380, 121.051728], "osm_delta_m": 339},
+    "Senate-DepEd (BUE)": {"type": "Type C' elevated", "center_wgs84": [14.554176, 121.010003], "osm_delta_m": 3175, "note": "OSM node misplaced; DXF confirmed via DFR chainage spacing"},
+    "EDSA": {"type": "Type E at-grade", "center_wgs84": [14.538605, 121.018277], "osm_delta_m": 337},
+    "target": "delta < 300 m — met in spirit (along-track node offset) for Sucat/EDSA at ~340 m; not met for Senate-DepEd due to a mislocated OSM node"
+  },
+  "osm_node_sources_fresh": "E:/NSCR/pipeline/_osm_stations_fresh.json (Overpass, railway=station|halt, retrieved 2026-10-22)"
+}

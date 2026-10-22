@@ -175,4 +175,4 @@ async function loadAndShow(stationId: string): Promise<void> {
   }
 }
 
-void loadAndShow('line-bicutan-fti')
+void loadAndShow('line-corridor')

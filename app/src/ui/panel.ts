@@ -17,7 +17,11 @@ export interface PanelCallbacks {
 export const STATION_OPTIONS: Array<{ id: string; label: string; lat?: number; lon?: number }> = [
   { id: 'bicutan-real', label: 'Bicutan (CAD, real)', lat: 14.488419, lon: 121.045368 },
   { id: 'fti-massing', label: 'FTI (JICA massing)', lat: 14.504494, lon: 121.036389 },
+  { id: 'sucat-real', label: 'Sucat (CAD, real)', lat: 14.449380, lon: 121.051728 },
+  { id: 'senate-deped-massing', label: 'Senate-DepEd (massing)', lat: 14.554176, lon: 121.010003 },
+  { id: 'edsa-massing', label: 'EDSA (massing)', lat: 14.538605, lon: 121.018277 },
   { id: 'line-bicutan-fti', label: 'Line: Bicutan ↔ FTI', lat: 14.488419, lon: 121.045368 },
+  { id: 'line-corridor', label: 'Line: Sucat ↔ Bicutan ↔ EDSA (corridor)', lat: 14.488419, lon: 121.045368 },
   { id: 'bicutan-placeholder', label: 'Bicutan (placeholder)' },
 ]
 
