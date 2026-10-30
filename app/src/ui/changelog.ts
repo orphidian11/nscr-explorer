@@ -5,9 +5,28 @@ export interface Release {
   sections: Array<{ title: 'New features' | 'Fixes' | 'Other changes'; items: string[] }>
 }
 
-export const APP_VERSION = 'v1.0.0'
+export const APP_VERSION = 'v1.1.0'
 
 export const RELEASES: Release[] = [
+  {
+    version: 'v1.1.0',
+    date: '2026-10-24',
+    sections: [
+      {
+        title: 'New features',
+        items: [
+          'Third-person avatar walk mode: a 1.75 m human figure now walks the station under your control — WASD to move (Shift to run), the mouse orbits the camera around it, wheel zooms, and it plays procedural walk/run/idle animation with a real shadow. After you exit, it stays standing in the scene as a human scale reference',
+          'Walkable ground is now found by raycasting against the station geometry (floors, platforms, stairs, OSM ground) instead of hardcoded Bicutan floor heights — the avatar walks correctly on every station, climbs real stair steps up to 0.4 m, and settles smoothly when stepping off an edge',
+        ],
+      },
+      {
+        title: 'Other changes',
+        items: [
+          'The old first-person Walk camera was removed — the Walk button now spawns the avatar; Fly mode is unchanged',
+        ],
+      },
+    ],
+  },
   {
     version: 'v1.0.0',
     date: '2026-10-22',

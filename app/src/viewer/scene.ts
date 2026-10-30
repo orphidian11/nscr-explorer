@@ -1,9 +1,11 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-import { createWalkController } from './walk'
-import type { WalkController } from './walk'
+import { createAvatarController } from './avatarController'
+import type { AvatarController } from './avatarController'
+import { createFlyController } from './fly'
 
-export type CameraPresetName = 'orbit' | 'walk' | 'fly' | 'top'
+export type CameraPresetName = 'orbit' | 'avatar' | 'fly' | 'top'
+type PosePresetName = Exclude<CameraPresetName, 'avatar'>
 
 export interface CameraPreset {
   label: string
@@ -13,9 +15,10 @@ export interface CameraPreset {
   target: [number, number, number]
 }
 
-export const CAMERA_PRESETS: Record<CameraPresetName, CameraPreset> = {
+// Poses for the orbit-style presets. 'avatar' has no pose — entering it
+// spawns the avatar below the current camera position (D4).
+export const CAMERA_PRESETS: Record<PosePresetName, CameraPreset> = {
   orbit: { label: 'Orbit', position: [115, 75, 115], target: [0, 8, 0] },
-  walk: { label: 'Walk', position: [26, 1.7, 78], target: [0, 10, -10] },
   fly: { label: 'Fly', position: [200, 120, 380], target: [-460, 5, -880] },
   top: { label: 'Top', position: [0.01, 230, 0.01], target: [0, 0, 0] },
 }
@@ -29,7 +32,7 @@ export interface ViewerScene {
   camera: THREE.PerspectiveCamera
   renderer: THREE.WebGLRenderer
   controls: OrbitControls
-  walk: WalkController
+  avatar: AvatarController
   applyPreset: (name: CameraPresetName) => void
   /** Recompute the presets so they frame the given bounds, then apply 'orbit'. */
   fitCameraTo: (box: THREE.Box3) => void
@@ -40,7 +43,7 @@ export interface ViewerScene {
 }
 
 /** Working copy of the presets, rescaled by fitCameraTo to frame a station. */
-const activePresets: Record<CameraPresetName, CameraPreset> = { ...CAMERA_PRESETS }
+const activePresets: Record<PosePresetName, CameraPreset> = { ...CAMERA_PRESETS }
 
 export function createViewerScene(container: HTMLElement): ViewerScene {
   const width = Math.max(container.clientWidth, 1)
@@ -131,7 +134,9 @@ export function createViewerScene(container: HTMLElement): ViewerScene {
   const resizeObserver = new ResizeObserver(resize)
   resizeObserver.observe(container)
 
-  const walk = createWalkController(camera, renderer.domElement, controls)
+  const fly = createFlyController(camera, renderer.domElement, controls)
+  const avatar = createAvatarController(scene, camera, renderer.domElement, controls)
+  avatar.setBaseGroups([ground]) // base plane + streamed OSM tiles are always walkable
 
   // Click-pick: raycast station geometry on genuine clicks (not orbit drags).
   const pickState: { handler: ((worldPoint: THREE.Vector3) => void) | null } = { handler: null }
@@ -161,21 +166,29 @@ export function createViewerScene(container: HTMLElement): ViewerScene {
     const last = (renderer as unknown as { __lastFrameTime?: number }).__lastFrameTime
     const dt = last === undefined ? 0 : Math.min((time - last) / 1000, 0.1)
     ;(renderer as unknown as { __lastFrameTime?: number }).__lastFrameTime = time
-    walk.update(dt)
+    avatar.update(dt)
+    fly.update(dt)
     // OrbitControls.update() clamps the camera radius to maxDistance around its
-    // target — that would leash fly/walk navigation to the station. Skip it
-    // while a nav mode owns the camera (it applies its own motion).
-    if (!walk.isActive()) controls.update()
+    // target — that would leash avatar/fly navigation to the station. Skip it
+    // while a nav mode owns the camera (each applies its own motion).
+    if (!avatar.isActive() && !fly.isActive()) controls.update()
     renderer.render(scene, camera)
   })
 
   const applyPreset = (name: CameraPresetName): void => {
-    if (name === 'walk' || name === 'fly') {
-      walk.enter(name)
+    if (name === 'avatar') {
+      fly.exit()
+      avatar.enter()
       return
     }
-    walk.exit()
-    const preset = activePresets[name]
+    if (name === 'fly') {
+      avatar.exit()
+      fly.enter()
+      return
+    }
+    avatar.exit()
+    fly.exit()
+    const preset = activePresets[name as PosePresetName]
     camera.position.set(...preset.position)
     controls.target.set(...preset.target)
     controls.update()
@@ -192,14 +205,6 @@ export function createViewerScene(container: HTMLElement): ViewerScene {
       label: 'Orbit',
       position: [center.x + orbitDir.x * dist, center.y + orbitDir.y * dist, center.z + orbitDir.z * dist],
       target: [center.x, center.y, center.z],
-    }
-    // Eye-level view along the long axis of the station.
-    const longAxis = Math.abs(size.x) >= Math.abs(size.z) ? 1 : 0
-    const walkOffset = longAxis === 1 ? [0.1, radius * 0.4, dist * 0.95] : [dist * 0.95, radius * 0.4, 0.1]
-    activePresets.walk = {
-      label: 'Walk',
-      position: [center.x + walkOffset[0], Math.max(center.y + walkOffset[1], 1.7), center.z + walkOffset[2]],
-      target: [center.x, center.y + size.y * 0.25, center.z],
     }
     activePresets.top = {
       label: 'Top',
@@ -238,7 +243,8 @@ export function createViewerScene(container: HTMLElement): ViewerScene {
     renderer.setAnimationLoop(null)
     resizeObserver.disconnect()
     controls.dispose()
-    walk.dispose()
+    avatar.dispose()
+    fly.dispose()
     renderer.dispose()
     renderer.domElement.remove()
   }
@@ -246,5 +252,5 @@ export function createViewerScene(container: HTMLElement): ViewerScene {
   const setPickHandler = (handler: ((worldPoint: THREE.Vector3) => void) | null): void => {
     pickState.handler = handler
   }
-  return { scene, camera, renderer, controls, walk, applyPreset, fitCameraTo, setPickHandler, setGridVisible, dispose }
+  return { scene, camera, renderer, controls, avatar, applyPreset, fitCameraTo, setPickHandler, setGridVisible, dispose }
 }

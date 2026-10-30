@@ -35,7 +35,7 @@ export interface PanelHandle {
 
 const CAMERA_BUTTONS: Array<{ preset: CameraPresetName; label: string }> = [
   { preset: 'orbit', label: 'Orbit' },
-  { preset: 'walk', label: 'Walk' },
+  { preset: 'avatar', label: 'Walk' },
   { preset: 'fly', label: 'Fly' },
   { preset: 'top', label: 'Top' },
 ]

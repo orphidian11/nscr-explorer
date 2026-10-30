@@ -42,12 +42,14 @@ function setGroundAnchor(anchor: { lat: number; lon: number }): void {
   if (key === groundAnchor) return
   groundAnchor = key
   if (ground) {
+    viewer.avatar.setTileGroup(null) // tiles are being disposed
     viewer.scene.remove(ground.group)
     ground.dispose()
   }
   ground = createGroundLayer({ lat: anchor.lat, lon: anchor.lon, zoom: 17 })
   ground.group.position.y = 0.05 // above the scene's base ground plane to avoid z-fighting
   viewer.scene.add(ground.group)
+  viewer.avatar.setTileGroup(ground.group) // OSM tiles are walkable ground
   // Keep the horizon honest: fog fades the streamed ground's rim into the sky
   // and the camera can never pull back past the streamed area, so dragging or
   // flying toward the next station always has ground under it.
@@ -124,6 +126,9 @@ function manifestUrlFor(stationId: string): string {
 
 /** Remove the current station's meshes and free GPU resources. */
 function disposeCurrentStation(): void {
+  // The avatar lives in the station's local frame — drop it (and its
+  // walkable-ground references) with the rest of the scene.
+  viewer.avatar.onStationUnload()
   if (!currentRoot) return
   viewer.scene.remove(currentRoot)
   currentRoot.traverse((object) => {
@@ -151,6 +156,13 @@ async function loadAndShow(stationId: string): Promise<void> {
     for (const layer of station.layers) {
       stationLayers.set(layer.id, layer)
     }
+    // Hand the avatar the station's walkable layers (floors/platform/stairs);
+    // the base plane + OSM tiles were registered once at scene creation.
+    viewer.avatar.setStationGroups(
+      ['floors', 'platform', 'stairs']
+        .map((id) => stationLayers.get(id)?.group)
+        .filter((group): group is THREE.Group => group != null),
+    )
     setGroundAnchor(station.originWgs84 ?? FALLBACK_ANCHOR)
     panel.setStation(station.name, [
       ...station.layers.map((layer) => ({ id: layer.id, label: layer.label, visible: layer.visible() })),
@@ -168,6 +180,30 @@ async function loadAndShow(stationId: string): Promise<void> {
       : coreBounds
     viewer.fitCameraTo(bounds)
     applyHorizonLimits()  // fitCameraTo sets dist-based fog; clamp back to the streamed radius
+    // Avatar spawn fallback (D4): if the camera is far outside the station
+    // (corridor view), spawn on the walkable mesh nearest the camera — that
+    // point is walkable by construction, unlike the corridor's bbox centre,
+    // which lands in the inter-station gap.
+    let nearest: { x: number; z: number } | null = null
+    let nearestD = Infinity
+    const meshBox = new THREE.Box3()
+    const meshCentre = new THREE.Vector3()
+    for (const id of ['floors', 'platform', 'stairs']) {
+      const group = stationLayers.get(id)?.group
+      if (!group) continue
+      group.traverse((object) => {
+        const mesh = object as THREE.Mesh
+        if (!mesh.isMesh) return
+        meshBox.setFromObject(mesh)
+        meshBox.getCenter(meshCentre)
+        const d = Math.hypot(meshCentre.x - viewer.camera.position.x, meshCentre.z - viewer.camera.position.z)
+        if (d < nearestD) {
+          nearestD = d
+          nearest = { x: meshCentre.x, z: meshCentre.z }
+        }
+      })
+    }
+    viewer.avatar.setSpawnFallback(nearest)
     panel.setStatus(`${station.layers.length} layers loaded from manifest`)
   } catch (error) {
     console.error('[main] Station load failed:', error)
